@@ -96,7 +96,7 @@ const IndexPage = () => {
             </Section>
 
             {/* Contacto */}
-            <Box>
+            <Section>
                 <Heading as="h3" variant="section-title">
                     Contacto
                 </Heading>
@@ -148,7 +148,7 @@ const IndexPage = () => {
                         </ListItem>
                     </List>
                 </SimpleGrid>
-            </Box>
+            </Section>
         </Box>
     )
 }
