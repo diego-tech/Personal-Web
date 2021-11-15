@@ -2,6 +2,7 @@ import Head from 'next/head'
 import NavBar from '../navbar'
 import { Box, Container, Heading, Image } from '@chakra-ui/react'
 import Footer from '../footer'
+import Section from '../section'
 
 const Main = ({children, router}) => {
     return (
@@ -17,33 +18,35 @@ const Main = ({children, router}) => {
 
             <NavBar path={router.asPath} />
                 <Container maxW="container.md" pt={14}>
-                    <Box 
-                        display={{md: 'flex'}} 
-                        mt={6} 
-                        alignItems="center">
+                    <Section delay={0.1}>
                         <Box 
-                            flexShrink={0} 
-                            mt={{base: 4, md: 0}}
-                            ml={{ md: 6 }}
-                            align="center">
-                            
-                            <Image 
-                                borderColor="whiteAlpha.800" 
-                                borderWidth={2} 
-                                borderStyle="solid" 
-                                maxWidth="120px"
-                                display="inline-block" 
-                                borderRadius="full" 
-                                src="/images/diego.jpg" 
-                                alt="Profile Image" />
+                            display={{md: 'flex'}} 
+                            mt={6} 
+                            alignItems="center">
+                            <Box 
+                                flexShrink={0} 
+                                mt={{base: 4, md: 0}}
+                                ml={{ md: 6 }}
+                                align="center">
+                                
+                                <Image 
+                                    borderColor="whiteAlpha.800" 
+                                    borderWidth={2} 
+                                    borderStyle="solid" 
+                                    maxWidth="120px"
+                                    display="inline-block" 
+                                    borderRadius="full" 
+                                    src="/images/diego.jpg" 
+                                    alt="Profile Image" />
+                            </Box>
+                            <Box flexGrow={1} align="center" ml={6}>
+                                <Heading as='h2' variant='page-title'>
+                                    Diego Muñoz Herranz
+                                </Heading>
+                                <p>Software Developer</p>
+                            </Box>
                         </Box>
-                        <Box flexGrow={1} align="center" ml={6}>
-                            <Heading as='h2' variant='page-title'>
-                                Diego Muñoz Herranz
-                            </Heading>
-                            <p>Software Developer</p>
-                        </Box>
-                    </Box>
+                    </Section>
                     {children}
                 <Footer />
             </Container>

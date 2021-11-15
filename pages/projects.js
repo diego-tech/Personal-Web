@@ -18,10 +18,11 @@ const Projects = () => {
             </Heading>
             <SimpleGrid columns={[1,2,2]} gap={6}>
             <Section>
+            {/*
                     <ProjectGridItem id="inkdrop" title="Inkdrop" thumbnail={thumbInkdrop}>
                         A Markdown note-taking app with 100+ plugins, cross-platform and
                         encrypted data sync support
-                    </ProjectGridItem>
+                    </ProjectGridItem> */}
                 </Section>
             </SimpleGrid>
         </Box>

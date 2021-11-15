@@ -8,7 +8,9 @@ import {
     List,
     ListItem,
     Icon,
-    Image
+    Image,
+    Divider,
+    useColorModeValue
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
@@ -25,11 +27,12 @@ const IndexPage = () => {
     return (
         <Box>
             {/* Description */}
-            <Section delay={0.1}>
+            <Section delay={0.2}>
                 <Paragraph>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam massa nibh, vulputate eu lacus vitae, tincidunt suscipit massa. Cras venenatis arcu eu ex fermentum, et ultrices ligula tempor. Pellentesque ac eleifend ipsum {' '}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam massa nibh, vulputate eu lacus vitae, tincidunt suscipit massa. 
+                    Cras venenatis arcu eu ex fermentum, et ultrices ligula tempor. Pellentesque ac eleifend ipsum {' '}
                     <NextLink href="/projects/inkdrop">
-                        <Link>Inkdrop</Link>
+                        <Link>Lorem</Link>
                     </NextLink>
                 </Paragraph>
                 <Box align="center" my={4}>
@@ -42,27 +45,28 @@ const IndexPage = () => {
             </Section>
 
             {/* Timeline */}
-            <Section delay={0.2}>
+            <Section delay={0.3}>
                     <Heading as="h3" variant="section-title">
                         Bio
                     </Heading>
+                    <Divider
+                        borderColor={useColorModeValue('#324F99', '#DCB664')}
+                        my={6}
+                    />
                     <BioSection>
-                    <BioYear>1984</BioYear> 
-                    Born in Osaka (大阪), Japan.
+                    <BioYear>2000</BioYear> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam massa nibh, vulputate eu lacus vitae,                    </BioSection>
+                    <BioSection>
+                        <BioYear>2000</BioYear>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam massa nibh, vulputate eu lacus vitae,
                     </BioSection>
                     <BioSection>
-                        <BioYear>2010</BioYear>
-                        Completed the Master&apos;s Program in the Graduate School of
-                        Information Science at Nara Institute of Science and Technology
-                        (奈良先端科学技術大学院大学情報科学研究科修士課程)
+                        <BioYear>2000</BioYear>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam massa nibh, vulputate eu lacus vitae,
                     </BioSection>
                     <BioSection>
-                        <BioYear>2010</BioYear>
-                        Worked at Yahoo! Japan (ヤフー株式会社入社)
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>2012 to present</BioYear>
-                        Work as freelance
+                        <BioYear>2000</BioYear>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam massa nibh, vulputate eu lacus vitae,
                     </BioSection>
             </Section>
 
@@ -71,13 +75,21 @@ const IndexPage = () => {
                 <Heading as="h3" variant="section-title">
                     Habilidades
                 </Heading>
+                <Divider
+                    borderColor={useColorModeValue('#324F99', '#DCB664')}
+                    my={6}
+                />
             </Section>
 
             {/* Curriculum */}
             <Section delay={0.5}>
-                <Heading as="h3" variant="section-title" mb={10}>
+                <Heading as="h3" variant="section-title">
                     Curriculum
                 </Heading>
+                <Divider
+                    borderColor={useColorModeValue('#324F99', '#DCB664')}
+                    my={6}
+                />
                 <Link
                     maxWidth="50%" 
                     ml="25%"
@@ -96,10 +108,14 @@ const IndexPage = () => {
             </Section>
 
             {/* Contacto */}
-            <Section>
+            <Section delay={0.6}>
                 <Heading as="h3" variant="section-title">
                     Contacto
                 </Heading>
+                <Divider
+                    borderColor={useColorModeValue('#324F99', '#DCB664')}
+                    my={6}
+                />
                 <SimpleGrid columns={[1,2,2]} align="center">
                     <List mt={2} textAlign="left">
                         <ListItem>

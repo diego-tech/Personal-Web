@@ -8,8 +8,8 @@ import GlobalStyles from "../components/globalStyles";
 const Website = ({ Component, pageProps, router }) => {
     return (
         <ChakraProvider theme={theme}>
-            <GlobalStyles />
             <Fonts/>
+            <GlobalStyles />
             <Layout router={router}>
                 <AnimatePresence exitBeforeEnter initial={true}>
                     <Component {...pageProps} key={router.route}/>

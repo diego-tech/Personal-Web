@@ -13,13 +13,11 @@ const components = {
     Heading: {
         variants: {
             'section-title': {
-                textDecoration: 'underline',
                 fontSize: 20,
-                textUnderlineOffset: 6,
-                textDecorationColor: '#525252',
-                textDecorationThickness: 4,
                 marginTop: 3,
-                marginBottom: 4,
+                marginBottom: 2,
+                textTransform: "uppercase",
+                fontFamily: "'Space Mono'",
             },
             'page-title': {
                 fontFamily: "'Space Mono'",
@@ -50,11 +48,11 @@ const config = {
 }
 
 const theme = extendTheme({
+    fonts,
     config, 
     styles, 
     components,
     colors, 
-    fonts
 })
 
 export default theme

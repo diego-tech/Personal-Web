@@ -16,6 +16,14 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./theme-toggle-button";
+import { chakra, shouldForwardProp } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+
+const AnimateDiv = chakra(motion.div, {
+    shouldForwardProp: prop => {
+        return shouldForwardProp(prop) || prop === 'transition'
+    }
+})
 
 const LinkItem = ({ href, path, _target, children, ...props }) => {
     const active = path === href
@@ -33,7 +41,7 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
         </Link>
       </NextLink>
     )
-  }
+}
 const NavBar = props => {
     const { path } = props
 
@@ -47,6 +55,10 @@ const NavBar = props => {
          zIndex={1}
          {...props}
          >
+        <AnimateDiv
+            initial={{x: 100, opacity: 0}}
+            animate={{x: 0, opacity: 1}}
+            transition={{duration: 0.8}}>
             <Container 
                 display="flex"  
                 p={2}
@@ -100,6 +112,7 @@ const NavBar = props => {
                     </Box>
                 </Box>
             </Container>
+        </AnimateDiv>
         </Box>
     )
 }
