@@ -21,6 +21,15 @@ const components = {
             },
             'page-title': {
                 fontFamily: "'Space Mono'",
+            },
+            'skills': {
+                fontSize: 20,
+                marginTop: 3,
+                marginBottom: 2,
+                textDecoration: 'underline',
+                textUnderlineOffset: 4,
+                textTransform: "uppercase",
+                fontFamily: "'Space Mono'",
             }
         }
     },

@@ -5,18 +5,22 @@ import {
     Text,
     Container,
     Divider,
-    Button
+    Button,
+    useColorModeValue
 } from '@chakra-ui/react'
 
 const NotFound = () => {
     return (
-        <Container mt={8}>
+        <Container mt={10}>
             <Heading as="h1">Page Not Found</Heading>
-            <Text>The page you&apos;re lookin for was not found.</Text>
-            <Divider my={6} />
+            <Text>La página que busca no se ha encontrado.</Text>
+            <Divider
+                borderColor={useColorModeValue('#324F99', '#DCB664')}
+                my={6}
+            />
             <Box my={6} align="center">
                 <NextLink href="/">
-                    <Button colorScheme="teal">Return to home</Button>
+                    <Button colorScheme="blue">Volver a Inicio</Button>
                 </NextLink>
             </Box>
         </Container>

@@ -13,7 +13,7 @@ const Main = ({children, router}) => {
                 <meta name="author" content="Diego Muñoz Herranz" />
                 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
                 <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
-                <title>Diego Muñoz - Homepage</title>
+                <title>Diego Muñoz - Portafolio </title>
             </Head>
 
             <NavBar path={router.asPath} />
@@ -40,10 +40,10 @@ const Main = ({children, router}) => {
                                     alt="Profile Image" />
                             </Box>
                             <Box flexGrow={1} align="center" ml={6}>
-                                <Heading as='h2' variant='page-title'>
+                                <Heading as='h2' variant='page-title' pb={2}>
                                     Diego Muñoz Herranz
                                 </Heading>
-                                <p>Software Developer</p>
+                                <p>Desarrollador de Software</p>
                             </Box>
                         </Box>
                     </Section>

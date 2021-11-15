@@ -30,6 +30,11 @@ const GlobalStyles = () => (
             .cv_image:hover {
                 transform: scale(1.1, 1.1);
             }
+
+            /* Language & Software */
+            .ls{
+                line-height: 30px;
+            }
         `}
     />
 )

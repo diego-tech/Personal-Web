@@ -25,15 +25,12 @@ const AnimateDiv = chakra(motion.div, {
     }
 })
 
-const LinkItem = ({ href, path, _target, children, ...props }) => {
-    const active = path === href
-    const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+const LinkItem = ({ href, _target, children, ...props }) => {
     return (
       <NextLink href={href} passHref>
         <Link
           p={2}
-          bg={active ? 'grassTeal' : undefined}
-          color={active ? '#202023' : inactiveColor}
+          color={useColorModeValue('#202023', 'white')}
           _target={_target}
           {...props}
         >

@@ -3,19 +3,28 @@ import {
     Box,
     Heading,
     SimpleGrid,
-    Divider
+    Divider,
+    useColorModeValue
 } from '@chakra-ui/react'
 import { ProjectGridItem } from '../components/grid-item'
 import Section from '../components/section'
+import Head from 'next/head'
 
 import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
 
 const Projects = () => {
     return (
         <Box>
-            <Heading as="h3" fontSize={20} mb={3}>
+            <Head>
+                <title>Diego Muñoz - Proyectos</title>
+            </Head>
+            <Heading as="h3" variant="section-title" fontSize={20} mb={3}>
                 Projects
             </Heading>
+            <Divider
+                borderColor={useColorModeValue('#324F99', '#DCB664')}
+                my={6}
+            />
             <SimpleGrid columns={[1,2,2]} gap={6}>
             <Section>
             {/*
