@@ -39,7 +39,6 @@ const components = {
             textUnderlineOffset:2
         })
     },
-
 }
 
 const fonts = {

@@ -35,7 +35,7 @@ const Main = ({children, router}) => {
                                     borderStyle="solid" 
                                     maxWidth="120px"
                                     display="inline-block" 
-                                    borderRadius="full" 
+                                    borderRadius="30" 
                                     src="/images/diego.jpg" 
                                     alt="Profile Image" />
                             </Box>

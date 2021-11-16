@@ -34,7 +34,12 @@ export const ProjectGridItem = ({ children, id, title, thumbnail }) => (
                     className="grid-item-thumbnail" 
                     placeholder="blur" />
                     <LinkOverlay href={`/works/${id}`}>
-                        <Text mt={2} fontSize={20}>
+                        <Text 
+                            textDecoration="underline" 
+                            textUnderlineOffset={5} 
+                            mt={3} 
+                            mb={3} 
+                            fontSize={20}>
                             {title} 
                         </Text>
                     </LinkOverlay>
@@ -52,19 +57,4 @@ export const GridItemsStyle = () => (
             border-radius: 12px;
         }
     `} />
-)
-
-export const GridContactItem = () => (
-    <Box w="100%" align="center">
-    <LinkBox cursor="pointer">
-        <LinkOverlay href={href} target="_blank">
-            <Text mt={2}>
-                {title}
-            </Text>
-        </LinkOverlay>
-        <Text fontSize={14}>
-            {children}
-        </Text>
-    </LinkBox>
-</Box>
 )
