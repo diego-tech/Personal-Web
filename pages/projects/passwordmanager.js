@@ -41,7 +41,7 @@ const Work = () => {
                     </ListItem>
                     <ListItem>
                         <Meta>Plataforma</Meta>
-                        <span>Windows/macOs/Linux</span>
+                        <span>Windows/MacOs/Linux</span>
                     </ListItem>
                     <ListItem>
                         <Meta>Stack</Meta>

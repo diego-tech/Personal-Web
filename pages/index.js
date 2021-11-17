@@ -31,9 +31,9 @@ const IndexPage = () => {
             <Layout title="Sobre Mí">
                 <Section delay={0.2}>
                     <Paragraph>
-                        Hola mi nombre es Diego y vivo en Madrid, soy desarrollador de software y un amante de la tecnología.
-                        Actualmente estudio el Grado Superior de Desarrollo de Aplicaciones Multiplataforma junto al Higher National Diploma in Computing.
-                        Me encanta seguir aprendiendo nuevos lenguajes en mi tiempo libre. 
+                    Hola mi nombre es Diego y vivo en Madrid, soy desarrollador de software y un amante de la tecnología. 
+                    Actualmente estudio el Grado Superior de Desarrollo de Aplicaciones Multiplataforma junto al Higher National Diploma in Computing. 
+                    Me apasiona aprender nuevas tecnologías en mi tiempo libre.
                     </Paragraph>
                     <Box align="center" my={4}>
                         <NextLink href="/projects">
@@ -74,7 +74,7 @@ const IndexPage = () => {
                         </BioSection>
                         <BioSection m={6}>
                             <BioYear>2020 hasta ahora</BioYear>
-                            Estudiando Grado Superior y con infinitas ganas de seguir aprendiendo
+                            Estudiando Grado Superior (DAM) y con infinitas ganas de seguir aprendiendo.
                         </BioSection>
                 </Section>
 
@@ -87,8 +87,11 @@ const IndexPage = () => {
                         my={6}
                     />
                     <P>
-                        Mis principales competencias son la arquitectura de proyectos, la consultoría y el desarrollo de software centrado, sobre todo, en aplicaciones iOS, Android y web.
-                        Dado que gran parte de mi carrera profesional ha estado dedicada al software empresarial, también realizo estas mismas labores aplicadas al diseño y desarrollo de backend. Poseo conocimientos sobre diseño gráfico y corporativo, los cuales aplico a la creación de UI y UX en mis aplicaciones, webs y juegos.
+                       Mis principales competencias son el desarrollo de aplicaciones multiplataforma,
+                       desarrollo BackEnd y Arquitectura de Servidores. Poseo conocimientos sobre diseño 2D
+                       y 3D para la creación de interfaces UI y UX tanto en Aplicaciones, Webs y Juegos.
+                       <br/>
+                       <br/>
                     </P>
                     <SimpleGrid columns={[1,2,2]} align="center">
                         <Box>
@@ -97,8 +100,8 @@ const IndexPage = () => {
                             </Heading>
                             <p className="ls">
                             Java | Swift |  <br/> HTML | CSS | JS | <br/>
-                            Python | MySql | <br/> Python
-                            | PHP | <br/> Django | <br/>
+                            Python | MySql | <br/> PHP | 
+                            <br/> Django | <br/>
                             Laravel | Next JS
                             </p>
                         </Box>
@@ -127,7 +130,7 @@ const IndexPage = () => {
                     <Link
                         maxWidth="50%" 
                         ml="25%"
-                        href="/files/CV.pdf"                
+                        href="/files/CV_Diego_Muñoz_Herranz.pdf"                
                         alt="CV"
                         target="_blank"
                         rel="noopener noreferrer"> 

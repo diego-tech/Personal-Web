@@ -33,13 +33,15 @@ const Work = () => {
                 <List ml={4} my={4}>
                     <ListItem>
                         <Meta>Código</Meta>
-                        <Link href="https://github.com/diego-tech/cesfuencarral">
+                        <Link 
+                            href="https://github.com/diego-tech/cesfuencarral" 
+                            target="_blank">
                             Código GitHub <ExternalLinkIcon mx="2px" mb="4px" />
                         </Link>
                     </ListItem>
                     <ListItem>
                         <Meta>Plataforma</Meta>
-                        <span>Windows/macOs/LDinux</span>
+                        <span>Windows/MacOs/Linux</span>
                     </ListItem>
                     <ListItem>
                         <Meta>Stack</Meta>

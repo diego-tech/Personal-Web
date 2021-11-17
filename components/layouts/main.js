@@ -13,7 +13,7 @@ const Main = ({children, router}) => {
                 <meta name="author" content="Diego Muñoz Herranz" />
                 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
                 <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
-                <title>Diego Muñoz - Portafolio </title>
+                <title>Diego Muñoz - Portafolio</title>
             </Head>
 
             <NavBar path={router.asPath} />

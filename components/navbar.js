@@ -82,7 +82,10 @@ const NavBar = props => {
                     pt={1}>
 
                     <LinkItem href="/projects" path={path}>
-                        Projects
+                        Proyectos
+                    </LinkItem>
+                    <LinkItem href="mailto:diego171200@gmail.com" path={path}>
+                        Contacto
                     </LinkItem>
                 </Stack>
                 <Box flex={1} align="right">
@@ -99,10 +102,13 @@ const NavBar = props => {
                                 aria-label="Options" />
                             <MenuList>
                                 <NextLink href="/" passHref>
-                                    <MenuItem as={Link}>About</MenuItem>
+                                    <MenuItem as={Link}>Sobre Mí</MenuItem>
                                 </NextLink>
                                 <NextLink href="/projects" passHref>
-                                    <MenuItem as={Link}>Projects</MenuItem>
+                                    <MenuItem as={Link}>Proyectos</MenuItem>
+                                </NextLink>
+                                <NextLink href="mailto:diego171200@gmail.com" passHref>
+                                    <MenuItem as={Link}>Contacto</MenuItem>
                                 </NextLink>
                             </MenuList>
                         </Menu>
