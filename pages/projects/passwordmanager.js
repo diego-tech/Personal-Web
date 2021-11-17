@@ -32,8 +32,11 @@ const Work = () => {
                 <List ml={4} my={4}>
                     <ListItem>
                         <Meta>Código</Meta>
-                        <Link href="#">
-                            Código GitHub <ExternalLinkIcon mx="2px" mb="4px" />
+                        <Link 
+                            href="https://github.com/diego-tech/Administrador-de-Usuarios" 
+                            target="_blank">
+                            Código GitHub 
+                            <ExternalLinkIcon mx="2px" mb="4px" />
                         </Link>
                     </ListItem>
                     <ListItem>

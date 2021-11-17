@@ -26,7 +26,7 @@ const Work = () => {
                 </Title>
                 <P>
                     Aplicación Android realizada en Java, consiste en una aplicación que se conecta a una API
-                    que está conectada a un sistema de seguridad. Desde nuestra apliación podremos comprobar el 
+                    que está conectada a un sistema de seguridad. Desde nuestra aplicación podremos comprobar el 
                     estado del sistema de seguridad y cambiarlo, también podremos ver el historial de los estados.               
                 </P>
                 <List ml={4} my={4}>

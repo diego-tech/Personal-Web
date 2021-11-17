@@ -24,7 +24,7 @@ const Work = () => {
                         mb={1}> 2020 </Badge>
                 </Title>
                 <P>
-                    Aplicación Web que correponde al proyecto de final de curso del 
+                    Aplicación Web que corresponde al proyecto de final de curso del 
                     CFGM de Sistemas Microinformáticos y Redes. Es una aplicacición realizada
                     en Python y su framework web Django que consiste en la reinterpretación del
                     sitio web del centro de estudios y una plataforma en la que los alumnos pueden
@@ -33,13 +33,13 @@ const Work = () => {
                 <List ml={4} my={4}>
                     <ListItem>
                         <Meta>Código</Meta>
-                        <Link href="#">
+                        <Link href="https://github.com/diego-tech/cesfuencarral">
                             Código GitHub <ExternalLinkIcon mx="2px" mb="4px" />
                         </Link>
                     </ListItem>
                     <ListItem>
                         <Meta>Plataforma</Meta>
-                        <span>Windows/macOs/Linux</span>
+                        <span>Windows/macOs/LDinux</span>
                     </ListItem>
                     <ListItem>
                         <Meta>Stack</Meta>

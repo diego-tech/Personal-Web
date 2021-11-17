@@ -23,6 +23,7 @@ import {
     IoCallSharp
 } from 'react-icons/io5'
 import Layout from '../components/layouts/article'
+import P from '../components/paragraph'
 
 const IndexPage = () => {
     return (
@@ -85,6 +86,10 @@ const IndexPage = () => {
                         borderColor={useColorModeValue('#324F99', '#DCB664')}
                         my={6}
                     />
+                    <P>
+                        Mis principales competencias son la arquitectura de proyectos, la consultoría y el desarrollo de software centrado, sobre todo, en aplicaciones iOS, Android y web.
+                        Dado que gran parte de mi carrera profesional ha estado dedicada al software empresarial, también realizo estas mismas labores aplicadas al diseño y desarrollo de backend. Poseo conocimientos sobre diseño gráfico y corporativo, los cuales aplico a la creación de UI y UX en mis aplicaciones, webs y juegos.
+                    </P>
                     <SimpleGrid columns={[1,2,2]} align="center">
                         <Box>
                             <Heading as="h3" variant="skills">
