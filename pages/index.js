@@ -100,9 +100,8 @@ const IndexPage = () => {
                             </Heading>
                             <p className="ls">
                             Java | Swift |  <br/> HTML | CSS | JS | <br/>
-                            Python | MySql | <br/> PHP | 
-                            <br/> Django | <br/>
-                            Laravel | Next JS
+                            Python | MySql | <br/> PHP | Django  <br/>
+                            | Laravel | Next JS
                             </p>
                         </Box>
                         <Box>
