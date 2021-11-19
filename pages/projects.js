@@ -46,8 +46,7 @@ const Projects = () => {
                     </Section>
                     <Section delay={0.1}>
                         <ProjectGridItem id="securitysystem" title="Sistema de Seguridad" thumbnail={thumbSecuritySystem}>
-                            Reinterpretación de la página web del Centro 
-                            de Estudios Superiore Ces Fuencarral
+                            Sistema de Seguridad Android, conectado a una API.
                         </ProjectGridItem> 
                     </Section>
                 </SimpleGrid>
