@@ -48,7 +48,7 @@ const NavBar = props => {
          as="nav"
          w="100%"
          bg={useColorModeValue('#ffffff40', '#20202380')}
-         style={{ backdropFilter: 'blur(10px)' }}
+         css={{ backdropFilter: 'blur(10px)' }}
          zIndex={1}
          {...props}
          >
@@ -64,7 +64,6 @@ const NavBar = props => {
                 align="center"
                 justify="space-between"
                 verticalAlign="center">
-
                 <Flex align="center" mr={5}>
                     <Heading 
                         as="h1" 
