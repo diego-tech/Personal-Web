@@ -1,4 +1,4 @@
-Página Web personal de Diego Muñoz Herranz, realizada con Next.js y Chakra UI.
+### Página Web personal de Diego Muñoz Herranz, realizada con Next.js y Chakra UI.
 
 ```js
 // Iniciar Proyecto
