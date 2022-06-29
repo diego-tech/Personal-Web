@@ -88,9 +88,12 @@ const IndexPage = () => {
                         my={6}
                     />
                     <P>
-                       Mis principales competencias son el desarrollo de aplicaciones multiplataforma,
-                       desarrollo BackEnd y Arquitectura de Servidores. Poseo conocimientos sobre diseño 2D
+                       Mis principales competencias son el Desarrollo de Aplicaciones Multiplataforma,
+                       desarrollo BackEnd, Arquitectura de Servidores y Análisis de Datos. Poseo conocimientos sobre diseño 2D
                        y 3D para la creación de interfaces UI y UX tanto en Aplicaciones Mobile, Aplicaciones Webs y Juegos.
+                       <br/>
+                       Me considero una persona Responsable, Dinámica y Social, con buena capacidad para trabajar en equipo y
+                       gestionar proyectos.
                        <br/>
                        <br/>
                     </P>
@@ -100,9 +103,9 @@ const IndexPage = () => {
                                 Lenguajes
                             </Heading>
                             <p className="ls">
-                            Java | Swift |  <br/> HTML | CSS | JS | <br/>
-                            Python | MySql | <br/> PHP | Django  <br/>
-                            | Laravel | Next JS
+                            Java, Swift, Python <br/> HTML, CSS, <br/>
+                            JS, MySql, <br/> PHP, Django,  <br/>
+                            Laravel, Next JS
                             </p>
                         </Box>
                         <Box>
@@ -110,10 +113,10 @@ const IndexPage = () => {
                                 Software
                             </Heading>
                             <p className="ls">
-                            VS Code | Android Studio | <br/> XCode | Postman | <br/>
-                            Adobe Illustrator | Adobe XD | <br/> Unity Engine 
-                            | Packet Tracer | Autodesk Maya | VM Virtual Box | <br/>
-                            VMWare | Office 365
+                            VS Code, Android Studio, <br/> ACL Analytics, XCode, Postman, <br/>
+                            Adobe Illustrator, Adobe XD, <br/> Unity Engine, 
+                            Packet Tracer, Autodesk Maya, VM Virtual Box, <br/>
+                            VMWare, Office 365
                             </p>
                         </Box>
                     </SimpleGrid>
