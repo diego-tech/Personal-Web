@@ -27,9 +27,21 @@ const Projects = () => {
                 />
                 <SimpleGrid columns={[1,1,2]} gap={6}>
                     <Section delay={0.1}>
+                        <ProjectGridItem id="tfg" title="Sports4All" thumbnail={thumbCesFuencarral}>
+                            Automatización y Gestión de Centros Deportivos
+                        </ProjectGridItem>
+                    </Section>
+                    <Section delay={0.1}>
                         <ProjectGridItem id="cesfuencarral" title="Web Ces Fuencarral" thumbnail={thumbCesFuencarral}>
                             Reinterpretación de la página web del Centro 
                             de Estudios Superiore Ces Fuencarral
+                        </ProjectGridItem> 
+                    </Section>
+                </SimpleGrid>
+                <SimpleGrid columns={[1,1,2]} gap={6}>
+                    <Section delay={0.1}>
+                        <ProjectGridItem id="securitysystem" title="Sistema de Seguridad" thumbnail={thumbSecuritySystem}>
+                            Sistema de Seguridad Android, conectado a una API.
                         </ProjectGridItem> 
                     </Section>
                     <Section delay={0.1}>
@@ -42,11 +54,6 @@ const Projects = () => {
                     <Section delay={0.1}>
                         <ProjectGridItem id="passwordmanager" title="Gestor de Usuarios" thumbnail={thumbPasswordManager}>
                             Simple Gestor de Usuarios realizado con Java
-                        </ProjectGridItem> 
-                    </Section>
-                    <Section delay={0.1}>
-                        <ProjectGridItem id="securitysystem" title="Sistema de Seguridad" thumbnail={thumbSecuritySystem}>
-                            Sistema de Seguridad Android, conectado a una API.
                         </ProjectGridItem> 
                     </Section>
                 </SimpleGrid>

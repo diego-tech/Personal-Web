@@ -43,7 +43,7 @@ const Main = ({children, router}) => {
                                 <Heading as='h2' variant='page-title' pb={2}>
                                     Diego Muñoz Herranz
                                 </Heading>
-                                <p>Desarrollador de Software</p>
+                                <p>Desarrollador de Software y Analista de Datos</p>
                             </Box>
                         </Box>
                     </Section>

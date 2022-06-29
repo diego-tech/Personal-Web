@@ -32,8 +32,8 @@ const IndexPage = () => {
                 <Section delay={0.2}>
                     <Paragraph>
                     Hola mi nombre es Diego y vivo en Madrid, soy desarrollador de software y un amante de la tecnología. 
-                    Actualmente estudio el Grado Superior de Desarrollo de Aplicaciones Multiplataforma junto al Higher National Diploma in Computing. 
-                    Me apasiona aprender nuevas tecnologías en mi tiempo libre.
+                    Actualmente trabajo como Junior Delivery Analyst en Deloitte.
+                    Me apasionan las nuevas tecnologías y seguir aprendiendo constantemente.
                     </Paragraph>
                     <Box align="center" my={4}>
                         <NextLink href="/projects">
@@ -73,8 +73,9 @@ const IndexPage = () => {
                             mis primeros proyectos.
                         </BioSection>
                         <BioSection m={6}>
-                            <BioYear>2020 hasta ahora</BioYear>
-                            Estudiando Grado Superior (DAM) y con infinitas ganas de seguir aprendiendo.
+                            <BioYear>2022</BioYear>
+                            Finalizo el Grado Superior en Desarrollo de Aplicaciones Multiplataforma junto al Higher Nacional Diploma in Computing y comienzo
+                            a trabajar como analista de datos en Deloitte.
                         </BioSection>
                 </Section>
 
@@ -89,7 +90,7 @@ const IndexPage = () => {
                     <P>
                        Mis principales competencias son el desarrollo de aplicaciones multiplataforma,
                        desarrollo BackEnd y Arquitectura de Servidores. Poseo conocimientos sobre diseño 2D
-                       y 3D para la creación de interfaces UI y UX tanto en Aplicaciones, Webs y Juegos.
+                       y 3D para la creación de interfaces UI y UX tanto en Aplicaciones Mobile, Aplicaciones Webs y Juegos.
                        <br/>
                        <br/>
                     </P>
