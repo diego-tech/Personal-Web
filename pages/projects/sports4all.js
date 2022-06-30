@@ -88,7 +88,7 @@ const Work = () => {
         </video>
         <br/>
         <video controls>
-          <source src="/images/projects/sports4all/ExplicacionQR.mp4" />
+          <source src="/images/projects/sports4all/QR.mp4" />
         </video>
         <SimpleGrid columns={2} gap={5}>
           <ProjectImage
