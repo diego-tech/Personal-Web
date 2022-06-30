@@ -6,7 +6,14 @@ const GlobalStyles = () => (
         styles={`
             *,*:focus,*:hover{
                 outline:none;
+                box-shadow: none;
             }
+
+            /* Remove Focus */
+            *:focus {
+                box-shadow: none !important;
+            }
+
             /* Scroll Bar Style */
 
             ::-webkit-scrollbar {
@@ -18,7 +25,7 @@ const GlobalStyles = () => (
             }
 
             ::-webkit-scrollbar-thumb {
-                background: ${useColorModeValue('#20202c', '#EFDFAD')};
+                background: ${useColorModeValue('#18181a', '#f9fafb')};
                 border-radius: 10px;
             }
 

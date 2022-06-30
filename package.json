@@ -18,7 +18,11 @@
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "framer-motion": "^5.3.0",
+<<<<<<< HEAD
     "next": "^12.1.0",
+=======
+    "next": "^12.2.0",
+>>>>>>> develop
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1"
