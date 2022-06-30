@@ -18,7 +18,7 @@ const Work = () => {
                 <Title>
                     Administrador de Usuarios
                     <Badge 
-                        bgColor={useColorModeValue('#324F99', '#DCB664')}
+                        bgColor={useColorModeValue('#779ECB', '#ff9d59')}
                         color={useColorModeValue('white', 'black')}
                         ml={2}
                         mb={1}> 2022 </Badge>

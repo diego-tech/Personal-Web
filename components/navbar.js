@@ -30,7 +30,7 @@ const LinkItem = ({ href, _target, children, ...props }) => {
       <NextLink href={href} passHref>
         <Link
           p={2}
-          color={useColorModeValue('#202023', 'white')}
+          color={useColorModeValue('#18181a', '#f9fafb')}
           _target={_target}
           {...props}
         >
@@ -47,7 +47,7 @@ const NavBar = props => {
          position="fixed"
          as="nav"
          w="100%"
-         bg={useColorModeValue('#ffffff40', '#20202380')}
+         bg={useColorModeValue('#ffffff44', '#20202380')}
          css={{ backdropFilter: 'blur(10px)' }}
          zIndex={1}
          {...props}
@@ -77,8 +77,7 @@ const NavBar = props => {
                     display={{ base: 'none', md: 'flex' }}
                     width={{ base: 'full', md: 'auto' }}
                     alignItems="center"
-                    flexGrow={1}
-                    pt={1}>
+                    flexGrow={1}>
 
                     <LinkItem href="/projects" path={path}>
                         Proyectos

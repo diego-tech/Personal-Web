@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import NavBar from '../navbar'
-import { Box, Container, Heading, Image } from '@chakra-ui/react'
+import { Box, Container, Heading, Image, useColorModeValue } from '@chakra-ui/react'
 import Footer from '../footer'
 import Section from '../section'
 
@@ -30,12 +30,12 @@ const Main = ({children, router}) => {
                                 align="center">
                                 
                                 <Image 
-                                    borderColor="whiteAlpha.800" 
                                     borderWidth={2} 
                                     borderStyle="solid" 
                                     maxWidth="120px"
                                     display="inline-block" 
                                     borderRadius="30" 
+                                    borderColor={useColorModeValue('#18181a', '#f9fafb')}
                                     src="/images/diego.jpg" 
                                     alt="Profile Image" />
                             </Box>

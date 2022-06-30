@@ -22,7 +22,7 @@ const Projects = () => {
                     Proyectos
                 </Heading>
                 <Divider
-                    borderColor={useColorModeValue('#324F99', '#DCB664')}
+                    borderColor={useColorModeValue('#779ECB', '#ff9d59')}
                     my={6}
                 />
                 <SimpleGrid columns={[1,1,2]} gap={6}>
