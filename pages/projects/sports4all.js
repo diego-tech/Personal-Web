@@ -5,6 +5,9 @@ import {
   List,
   ListItem,
   useColorModeValue,
+  Heading,
+  SimpleGrid,
+  Divider,
 } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, ProjectImage, Meta } from '../../components/project'
@@ -28,7 +31,13 @@ const Work = () => {
           </Badge>
         </Title>
         <P>
-          DEFINICION PROYECTO
+          Sports4All es un proyecto realizado como Trabajo de Fin de Grado,
+          consiste en un sistema de Gestión y Automatización para los centros
+          deportivos de España por la cual podremos realizar, reservas de
+          espacios, inscripciones a eventos, ser social con gente con tus mismas
+          aficiones. Además con este sistema el usuario podrá acceder al espacio
+          sin tener que pasar por ningún intermediario gracias al sistema de
+          validaciones por código QR.
         </P>
         <List my={4}>
           <ListItem>
@@ -65,9 +74,36 @@ const Work = () => {
           </ListItem>
           <ListItem>
             <Meta>Stack</Meta>
-            <span>Swift, Laravel, Python, Flask, MySql</span>
+            <span>
+              Swift (Alamofire, FSCalendar), Laravel, Python, Flask, MySql
+            </span>
           </ListItem>
         </List>
+        <Heading as="h3" variant="section-title">
+          Multimedia
+        </Heading>
+        <Divider borderColor={useColorModeValue('#779ECB', '#f3a269')} my={6} />
+        <video autoPlay controls>
+          <source src="/images/projects/sports4all/overview.mp4" />
+        </video>
+        <br/>
+        <video controls>
+          <source src="/images/projects/sports4all/ExplicacionQR.mp4" />
+        </video>
+        <SimpleGrid columns={2} gap={5}>
+          <ProjectImage
+            src="/images/projects/sports4all/1.png"
+            alt="Sports4All"
+          />
+          <ProjectImage
+            src="/images/projects/sports4all/2.png"
+            alt="Sports4All"
+          />
+        </SimpleGrid>
+        <ProjectImage
+          src="/images/projects/sports4all/5.png"
+          alt="Sports4All"
+        />
       </Container>
     </Layout>
   )
