@@ -14,12 +14,12 @@ const NotFound = () => {
     <Container mt={10}>
       <Heading as="h1">Page Not Found</Heading>
       <Text>La página que busca no se ha encontrado.</Text>
-      <Divider borderColor={useColorModeValue('#779ECB', '#ff9d59')} my={6} />
+      <Divider borderColor={useColorModeValue('#779ECB', '#f3a269')} my={6} />
       <Box my={6} align="center">
         <NextLink href="/">
           <Button
             color={useColorModeValue('#18181a', '#f9fafb')}
-            bgColor={useColorModeValue('#779ECB', '#ff9d59')}
+            bgColor={useColorModeValue('#779ECB', '#f3a269')}
           >
             Volver a Inicio
           </Button>

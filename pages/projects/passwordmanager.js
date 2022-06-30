@@ -18,7 +18,7 @@ const Work = () => {
                 <Title>
                     Administrador de Usuarios
                     <Badge 
-                        bgColor={useColorModeValue('#779ECB', '#ff9d59')}
+                        bgColor={useColorModeValue('#779ECB', '#f3a269')}
                         color={useColorModeValue('white', 'black')}
                         ml={2}
                         mb={1}> 2020 </Badge>
@@ -29,7 +29,7 @@ const Work = () => {
                     además de listar todos los usuarios, un usuario concreto o todos los usuarios
                     asociados a un tipo de cuenta.
                 </P>
-                <List ml={4} my={4}>
+                <List my={4}>
                     <ListItem>
                         <Meta>Código</Meta>
                         <Link 

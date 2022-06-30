@@ -18,7 +18,7 @@ const Work = () => {
                 <Title>
                     Web Ces Fuencarral 
                     <Badge 
-                        bgColor={useColorModeValue('#779ECB', '#ff9d59')}
+                        bgColor={useColorModeValue('#779ECB', '#f3a269')}
                         color={useColorModeValue('white', 'black')}
                         ml={2}
                         mb={1}> 2020 </Badge>
@@ -30,7 +30,7 @@ const Work = () => {
                     sitio web del centro de estudios y una plataforma en la que los alumnos pueden
                     subir consultas y conversar con profesores y otros alumnos.
                 </P>
-                <List ml={4} my={4}>
+                <List my={4}>
                     <ListItem>
                         <Meta>Código</Meta>
                         <Link 

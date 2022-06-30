@@ -34,7 +34,7 @@ const IndexPage = () => {
             Sobre Mí
           </Heading>
           <Divider
-            borderColor={useColorModeValue('#779ECB', '#ff9d59')}
+            borderColor={useColorModeValue('#779ECB', '#f3a269')}
             my={6}
           />
           <Paragraph>
@@ -59,7 +59,7 @@ const IndexPage = () => {
                 rightIcon={<ChevronRightIcon />}
                 mt={5}
                 color={useColorModeValue('#18181a', '#f9fafb')}
-                bgColor={useColorModeValue('#779ECB', '#ff9d59')}
+                bgColor={useColorModeValue('#779ECB', '#f3a269')}
               >
                 Mis Proyectos
               </Button>
@@ -72,7 +72,7 @@ const IndexPage = () => {
             Bio
           </Heading>
           <Divider
-            borderColor={useColorModeValue('#779ECB', '#ff9d59')}
+            borderColor={useColorModeValue('#779ECB', '#f3a269')}
             my={6}
           />
           <BioSection m={6}>
@@ -109,7 +109,7 @@ const IndexPage = () => {
             Habilidades
           </Heading>
           <Divider
-            borderColor={useColorModeValue('#779ECB', '#ff9d59')}
+            borderColor={useColorModeValue('#779ECB', '#f3a269')}
             my={6}
           />
           <P>
@@ -155,7 +155,7 @@ const IndexPage = () => {
             Curriculum
           </Heading>
           <Divider
-            borderColor={useColorModeValue('#779ECB', '#ff9d59')}
+            borderColor={useColorModeValue('#779ECB', '#f3a269')}
             my={6}
           />
           <Link
@@ -182,7 +182,7 @@ const IndexPage = () => {
             Contacto
           </Heading>
           <Divider
-            borderColor={useColorModeValue('#779ECB', '#ff9d59')}
+            borderColor={useColorModeValue('#779ECB', '#f3a269')}
             my={6}
           />
           <SimpleGrid columns={[1, 2, 2]}>

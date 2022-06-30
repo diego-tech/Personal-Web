@@ -19,7 +19,7 @@ const Work = () => {
                 <Title>
                     Sistema de Seguridad
                     <Badge 
-                        bgColor={useColorModeValue('#779ECB', '#ff9d59')}
+                        bgColor={useColorModeValue('#779ECB', '#f3a269')}
                         color={useColorModeValue('white', 'black')}
                         ml={2}
                         mb={1}> 2021 </Badge>
@@ -29,7 +29,7 @@ const Work = () => {
                     que está conectada a un sistema de seguridad. Desde nuestra aplicación podremos comprobar el 
                     estado del sistema de seguridad y cambiarlo, también podremos ver el historial de los estados.               
                 </P>
-                <List ml={4} my={4}>
+                <List my={4}>
                     <ListItem>
                         <Meta>Código</Meta>
                         <Link 

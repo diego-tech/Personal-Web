@@ -22,12 +22,12 @@ const Projects = () => {
                     Proyectos
                 </Heading>
                 <Divider
-                    borderColor={useColorModeValue('#779ECB', '#ff9d59')}
+                    borderColor={useColorModeValue('#779ECB', '#f3a269')}
                     my={6}
                 />
                 <SimpleGrid columns={[1,1,2]} gap={6}>
                     <Section delay={0.1}>
-                        <ProjectGridItem id="tfg" title="Sports4All" thumbnail={thumbCesFuencarral}>
+                        <ProjectGridItem id="sports4all" title="Sports4All" thumbnail={thumbCesFuencarral}>
                             Automatización y Gestión de Centros Deportivos
                         </ProjectGridItem>
                     </Section>

@@ -18,7 +18,7 @@ const Work = () => {
                 <Title>
                     Editor Web Online 
                     <Badge 
-                        bgColor={useColorModeValue('#779ECB', '#ff9d59')}
+                        bgColor={useColorModeValue('#779ECB', '#f3a269')}
                         color={useColorModeValue('white', 'black')}
                         ml={2}
                         mb={1}> 2020 </Badge>
@@ -29,7 +29,7 @@ const Work = () => {
                     Split-Grid y Js-Base64. Además el editor incluye autocompletado ya que utilizamos
                     Monaco Editor la parte en la que se programa.
                 </P>
-                <List ml={4} my={4}>
+                <List my={4}>
                     <ListItem>
                         <Meta>Código</Meta>
                         <Link 
