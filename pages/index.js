@@ -159,7 +159,7 @@ const IndexPage = () => {
           <Link
             maxWidth="50%"
             ml="25%"
-            href="/files/CV_Diego_Muñoz_Herranz.pdf"
+            href="/files/CV_Diego_Munoz_Herranz.pdf"
             alt="CV"
             target="_blank"
             rel="noopener noreferrer"
@@ -169,7 +169,7 @@ const IndexPage = () => {
               mt={5}
               className="cv_image"
               display="inline-block"
-              src="/images/Diego Muñoz CV.png"
+              src="/images/CV_Diego_Munoz.png"
               alt="CV Image"
             />
           </Link>
