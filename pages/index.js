@@ -45,8 +45,6 @@ const IndexPage = () => {
             Desde el año 2014 que empezó mi andadura en las nuevas tecnologías,
             no he parado de aprender y disfrutar de este gran mundo.
             <br />
-            Actualmente trabajo como <b>Junior Delivery Analyst en Deloitte</b>.
-            <br />
             <br />
             Me apasionan las nuevas tecnologías y seguir aprendiendo
             constantemente.
