@@ -100,6 +100,12 @@ const IndexPage = () => {
             Multiplataforma junto al Higher Nacional Diploma in Computing y
             comienzo a trabajar como analista de datos en Deloitte.
           </BioSection>
+          <BioSection m={6}>
+            <BioYear>2022 - Sep</BioYear>
+            Con la idea de avanzar en mi carrera profesional dejo la anterior empresa
+            y comienzo a trabajar como Junior IT Audit en KPMG, también empiezo a introducirme
+            en el Data Science y Estudio un Master sobre Inteligencia Artificial en la Universidad Europea.
+          </BioSection>
         </Section>
 
         <Section delay={0.4}>
@@ -130,7 +136,7 @@ const IndexPage = () => {
               <p className="ls">
                 Java, Swift, Python <br /> HTML, CSS, <br />
                 JS, MySql, <br /> PHP, Django, <br />
-                Laravel, Next JS
+                Laravel, Next JS <br /> C#, ASP.NET
               </p>
             </Box>
             <Box>
