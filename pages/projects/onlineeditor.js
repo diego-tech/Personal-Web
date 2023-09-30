@@ -1,5 +1,4 @@
 import {
-  Container,
   Badge,
   Link,
   List,
@@ -16,7 +15,6 @@ import Layout from '../../components/layouts/article'
 const Work = () => {
   return (
     <Layout title="Editor Online">
-      <Container>
         <Title>
           Editor Web Online
           <Badge
@@ -71,7 +69,6 @@ const Work = () => {
           src="/images/projects/onlineditor/3.png"
           alt="Online Editor"
         />
-      </Container>
     </Layout>
   )
 }

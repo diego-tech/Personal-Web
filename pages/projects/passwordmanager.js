@@ -1,5 +1,4 @@
 import {
-  Container,
   Badge,
   Link,
   List,
@@ -16,7 +15,6 @@ import Layout from '../../components/layouts/article'
 const Work = () => {
   return (
     <Layout title="Administrador de Usuarios">
-      <Container>
         <Title>
           Administrador de Usuarios
           <Badge
@@ -75,7 +73,6 @@ const Work = () => {
           src="/images/projects/passwordmanager/4.png"
           alt="User Manager"
         />
-      </Container>
     </Layout>
   )
 }
