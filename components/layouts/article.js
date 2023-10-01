@@ -10,6 +10,7 @@ const variants = {
 
 const Layout = ({ children, title }) => {
     const t = `${title} - Diego Muñoz Herranz`
+    
     return (<motion.article
         initial="hidden"
         animate="enter"
