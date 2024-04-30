@@ -1,5 +1,4 @@
 import {
-  Container,
   Badge,
   Link,
   List,
@@ -16,7 +15,6 @@ import Layout from '../../components/layouts/article'
 const Work = () => {
   return (
     <Layout title="Ces Fuencarral">
-      <Container>
         <Title>
           Web Ces Fuencarral
           <Badge
@@ -84,7 +82,6 @@ const Work = () => {
           src="/images/projects/cesfuencarral/6.png"
           alt="Ces Fuencarral"
         />
-      </Container>
     </Layout>
   )
 }
