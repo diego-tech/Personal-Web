@@ -1,5 +1,4 @@
 import {
-  Container,
   Badge,
   Link,
   List,
@@ -17,7 +16,6 @@ import Layout from '../../components/layouts/article'
 const Work = () => {
   return (
     <Layout title="Sistema de Seguridad">
-      <Container>
         <Title>
           Sistema de Seguridad
           <Badge
@@ -81,7 +79,6 @@ const Work = () => {
             alt="Sistema de Seguridad"
           />
         </SimpleGrid>
-      </Container>
     </Layout>
   )
 }

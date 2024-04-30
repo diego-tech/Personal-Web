@@ -38,18 +38,31 @@ const IndexPage = () => {
             my={6}
           />
           <Paragraph>
-            Hola mi nombre es Diego soy desarrollador de software y un amante de
-            la tecnología.
+            ¡Hola! Soy Diego, un apasionado desarrollador de software y entusiasta de la tecnología.
+            Mi viaje en el mundo de las nuevas tecnologías comenzó en 2014,
+            y desde entonces, no he dejado de aprender y disfrutar de este emocionante universo.
             <br />
             <br />
-            Desde el año 2014 que empezó mi andadura en las nuevas tecnologías,
-            no he parado de aprender y disfrutar de este gran mundo.
+            Cuento con una sólida formación académica que incluye un Grado Superior en Desarrollo de Aplicaciones
+            Multiplataforma, obtenido entre 2020 y 2022, y un Grado Superior en Sistemas
+            Microinformáticos y Redes, que completé de 2018 a 2020.
+            Además, amplié mis conocimientos y habilidades realizando un Máster en Inteligencia
+            Artificial y Data Science en la Universidad Europea de Madrid.
             <br />
-            Actualmente trabajo como <b>Junior Delivery Analyst en Deloitte</b>.
+            En mi búsqueda continua de conocimiento, actualmente estoy embarcado en un nuevo
+            desafío: estoy estudiando el Grado en Matemática Computacional.
             <br />
             <br />
-            Me apasionan las nuevas tecnologías y seguir aprendiendo
-            constantemente.
+            Me considero una persona responsable, dinámica y social.
+            Tengo la capacidad de adaptarme rápidamente a las diferentes condiciones y desafíos
+            que se me presenten. Además, disfruto trabajando en equipo y colaborando en proyectos
+            que requieren soluciones creativas.
+            <br />
+            <br />
+            Mi objetivo es contribuir al avance tecnológico y al desarrollo de soluciones
+            innovadoras que tengan un impacto positivo en la sociedad.
+            Siempre estoy abierto a nuevas oportunidades y
+            desafíos emocionantes en el mundo de la tecnología.
           </Paragraph>
           <Box align="center" my={4}>
             <NextLink
@@ -102,6 +115,19 @@ const IndexPage = () => {
             Multiplataforma junto al Higher Nacional Diploma in Computing y
             comienzo a trabajar como analista de datos en Deloitte.
           </BioSection>
+          <BioSection m={6}>
+            <BioYear>2022 - Sep</BioYear>
+            Con la idea de avanzar en mi carrera profesional dejo la anterior empresa y
+            comienzo a trabajar como Junior IT Audit en KPMG, también empiezo a introducirme en el
+            Data Science y Estudio un Máster en Inteligencia Artificial y Data Science en la
+            Universidad Europea de Madrid.
+          </BioSection>
+          <BioSection m={6}>
+            <BioYear>2023</BioYear>
+            Continúo mis andaduras en KPMG y tras la finalización del máster y de
+            este tiempo tomo la decisión de comenzar el Grado en Matemática Computacional en
+            UNIR (Universidad Internacional de la Rioja)
+          </BioSection>
         </Section>
 
         <Section delay={0.4}>
@@ -113,38 +139,31 @@ const IndexPage = () => {
             my={6}
           />
           <P>
-            Mis principales competencias son el Desarrollo de Aplicaciones
-            Multiplataforma, desarrollo BackEnd, Arquitectura de Servidores y
-            Análisis de Datos. Poseo conocimientos sobre diseño 2D y 3D para la
-            creación de interfaces UI y UX tanto en Aplicaciones Mobile,
-            Aplicaciones Webs y Juegos.
-            <br />
-            Me considero una persona Responsable, Dinámica y Social, con buena
-            capacidad para trabajar en equipo y gestionar proyectos.
-            <br />
-            <br />
+            Como profesional, he adquirido una amplia gama de competencias que
+            incluyen el desarrollo de aplicaciones multiplataforma con experiencia sólida en la
+            creación de aplicaciones que funcionan en diversas plataformas para abordar las necesidades
+            cambiantes del mercado, habilidades en el diseño y construcción de robustos sistemas
+            BackEnd para aplicaciones y servicios web, y experiencia en la planificación y configuración de
+            infraestructuras de servidor para garantizar un rendimiento óptimo.
           </P>
+          <Heading as="h3" variant="skills" align="center">
+              Software y Lenguajes
+          </Heading>
           <SimpleGrid columns={[1, 2, 2]} align="center">
             <Box>
-              <Heading as="h3" variant="skills">
-                Lenguajes
-              </Heading>
               <p className="ls">
-                Java, Swift, Python <br /> HTML, CSS, <br />
-                JS, MySql, <br /> PHP, Django, <br />
-                Laravel, Next JS
+                VS Code, Android Studio, <br /> ACL Analytics, XCode, Postman,{' '}
+                 <br /> Alteryx Designer, Power BI <br /> Unity Engine, Packet Tracer, <br />
+                Autodesk Maya, VM Virtual Box, 
               </p>
             </Box>
             <Box>
-              <Heading as="h3" variant="skills">
-                Software
-              </Heading>
-              <p className="ls">
-                VS Code, Android Studio, <br /> ACL Analytics, XCode, Postman,{' '}
-                <br />
-                Adobe Illustrator, Adobe XD, <br /> Unity Engine, Packet Tracer,
-                Autodesk Maya, VM Virtual Box, <br />
-                VMWare, Office 365
+            <p className="ls">
+                VMWare, Suite Microsoft, <br />
+                Suite Adobe, <br /> Azure Databricks
+                Java, <br/> Swift, Python, HTML, CSS, <br />
+                JS, MySql, PHP, Django, <br />
+                Laravel, Next JS
               </p>
             </Box>
           </SimpleGrid>
