@@ -4,7 +4,8 @@ import {
     Box, 
     Image, 
     Link, 
-    Badge 
+    Badge,
+    Text
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
@@ -33,3 +34,15 @@ export const Meta = ({ children }) => (
         {children}
     </Badge>
 )
+
+export const UnderlinedText = ({ children }) => {
+    return (
+      <Text
+        display="inline-block"
+        textDecoration="underline"
+        fontWeight="bold"
+      >
+        {children}
+      </Text>
+    );
+  };
