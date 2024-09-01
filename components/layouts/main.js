@@ -100,7 +100,7 @@ const Main = ({ children, router }) => {
                                 </a>
                                 <a
                                     className='rssLink'
-                                    href={`tel:+633543240`}
+                                    href={`tel:633543240`}
                                     title="Enviar un correo electrónico a Diego Muñoz Herranz al correo diego171200@gmail.com"
                                     target="_blank"
                                     rel="noopener noreferrer">
