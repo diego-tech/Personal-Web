@@ -1,93 +1,46 @@
-import NextLink from 'next/link'
 import {
   Link,
-  SimpleGrid,
   Box,
   Heading,
-  Button,
-  List,
-  ListItem,
-  Icon,
-  Image,
   Divider,
   useColorModeValue,
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
-import { ChevronRightIcon } from '@chakra-ui/icons'
 import { BioSection, BioYear } from '../components/bio'
-import {
-  IoLogoGithub,
-  IoLogoLinkedin,
-  IoMailSharp,
-  IoCallSharp,
-} from 'react-icons/io5'
+
 import Layout from '../components/layouts/article'
-import P from '../components/paragraph'
+import { Experience } from '../components/experience'
+import Projects from '../components/projects'
+import { Skills } from '../components/skills'
 
 const IndexPage = () => {
   return (
     <Box>
       <Layout title="Sobre Mí">
-        <Section delay={0.2}>
+        <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
             Sobre Mí
           </Heading>
           <Divider
             borderColor={useColorModeValue('#779ECB', '#f3a269')}
-            my={6}
           />
           <Paragraph>
-            ¡Hola! Soy Diego, un apasionado desarrollador de software y entusiasta de la tecnología.
-            Mi viaje en el mundo de las nuevas tecnologías comenzó en 2014,
-            y desde entonces, no he dejado de aprender y disfrutar de este emocionante universo.
-            <br />
-            <br />
-            Cuento con una sólida formación académica que incluye un Grado Superior en Desarrollo de Aplicaciones
-            Multiplataforma, obtenido entre 2020 y 2022, y un Grado Superior en Sistemas
-            Microinformáticos y Redes, que completé de 2018 a 2020.
-            Además, amplié mis conocimientos y habilidades realizando un Máster en Inteligencia
-            Artificial y Data Science en la Universidad Europea de Madrid.
-            <br />
-            En mi búsqueda continua de conocimiento, actualmente estoy embarcado en un nuevo
-            desafío: estoy estudiando el Grado en Matemática Computacional.
-            <br />
-            <br />
-            Me considero una persona responsable, dinámica y social.
-            Tengo la capacidad de adaptarme rápidamente a las diferentes condiciones y desafíos
-            que se me presenten. Además, disfruto trabajando en equipo y colaborando en proyectos
-            que requieren soluciones creativas.
-            <br />
-            <br />
-            Mi objetivo es contribuir al avance tecnológico y al desarrollo de soluciones
-            innovadoras que tengan un impacto positivo en la sociedad.
-            Siempre estoy abierto a nuevas oportunidades y
-            desafíos emocionantes en el mundo de la tecnología.
+            ¡Hola! Soy Diego, un apasionado desarrollador de software y
+            entusiasta de la tecnología. Desde que comencé en 2014,
+            he acumulado una sólida formación, incluyendo un Grado Superior en Desarrollo de Aplicaciones Multiplataforma y
+            un Máster en Inteligencia Artificial y Data Science.
           </Paragraph>
-          <Box align="center" my={4}>
-            <NextLink
-              href="/projects"
-            >
-              <Button
-                rightIcon={<ChevronRightIcon />}
-                mt={5}
-                color={useColorModeValue('#18181a', '#f9fafb')}
-                bgColor={useColorModeValue('#779ECB', '#f3a269')}
-              >
-                Mis Proyectos
-              </Button>
-            </NextLink>
-          </Box>
-        </Section>
-
-        <Section delay={0.3}>
-          <Heading as="h3" variant="section-title">
-            Bio
-          </Heading>
-          <Divider
-            borderColor={useColorModeValue('#779ECB', '#f3a269')}
-            my={6}
-          />
+          <Paragraph>
+            He trabajado en empresas como Deloitte y KPMG, desempeñándo análisis
+            de datos y auditoría IT, y siempre buscando nuevos retos y oportunidades
+            para contribuir al avance tecnológico.
+          </Paragraph>
+          <Paragraph>
+            Me caracterizo por ser responsable, dinámico y adaptable,
+            disfrutando de la colaboración en equipo y la resolución creativa de problemas.
+            Mi objetivo es desarrollar soluciones innovadoras que tengan un impacto positivo en la sociedad.
+          </Paragraph>
           <BioSection m={6}>
             <BioYear>2000</BioYear>
             Nacido en Madrid, España
@@ -124,139 +77,163 @@ const IndexPage = () => {
           </BioSection>
           <BioSection m={6}>
             <BioYear>2023</BioYear>
-            Continúo mis andaduras en KPMG y tras la finalización del máster y de
-            este tiempo tomo la decisión de comenzar el Grado en Matemática Computacional en
-            UNIR (Universidad Internacional de la Rioja)
+            Continúo mis andaduras en KPMG continuando con mi ambición y formandome en nuevas tecnologías.
           </BioSection>
         </Section>
 
+        <Section delay={0.2}>
+          <Heading as="h3" variant="section-title">
+            Experiencia Laboral
+          </Heading>
+          <Divider
+            borderColor={useColorModeValue('#779ECB', '#f3a269')}
+          />
+          <Experience
+            company={"KPMG"}
+            position={"Data Analyst Staff II"}
+            starttime={"Sep 2023"}
+            endtime={"Actualidad"}
+            summary={
+              `En mi rol actual, lidero la migración a Azure Databricks y 
+              el desarrollo de aplicaciones estratégicas para el departamento 
+              de auditoría, optimizando procesos con Python y PySpark, y gestionando 
+              datos clave para Data Analytics y Auditoría Financiera en SQL Server 
+              y Alteryx. Además, me encargo de la comunicación y gestión de datos 
+              con los clientes.`
+            } />
+          <Experience
+            company={"KPMG"}
+            position={"Data Analyst Staff I"}
+            starttime={"Sep 2022"}
+            endtime={"Sep 2023"}
+            summary={
+              `Migración de sistemas desde SQL Server hacia Azure Databricks utilizando Python y PySpark, optimizo datos con Alteryx y desarrollo 
+              aplicaciones web con Python y Django. Además, proceso datos para análisis y 
+              auditoría financiera, contribuyendo al éxito empresarial mediante la toma 
+              de decisiones informadas y la mejora de la eficiencia y escalabilidad.`
+            } />
+          <Experience
+            company={"Deloitte"}
+            position={"Junior Delivery Analyst"}
+            starttime={"Abr 2022"}
+            endtime={"Aug 2023"}
+            summary={
+              `Analista de Datos y Experto en Python en una entidad 
+              financiera de España, me encargaba del análisis estratégico 
+              de datos para la toma de decisiones. Utilizaba herramientas como 
+              PySpark y HUE en entornos Big Data y espacios cloud para extraer y 
+              analizar grandes volúmenes de información. Mi trabajo incluía crear informes 
+              detallados para respaldar decisiones clave, optimizando procesos y generando 
+              valor para la entidad financiera y sus clientes.`
+            } />
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            Educación
+          </Heading>
+          <Divider
+            borderColor={useColorModeValue('#779ECB', '#f3a269')}
+          />
+          <Experience
+            company={"Universidad Europea"}
+            position={"Master en Inteligencia Artifiial"}
+            starttime={"2022"}
+            endtime={"2023"}
+            summary={
+              `Machine Learning
+                · Data Science
+                · Python/R
+                · Pytorch
+                · RapidMiner Studio
+                · Redes Neuronales y Redes Convolucionales
+                · Deep Learning
+                · Cognitive Computing
+                · Reconocimiento de voz y asistentes virtuales
+                · Despliegue de modelos en producción.
+                · IBM Cloud
+                · Microsoft Azure
+                · TensorFlow/Keras
+                · Computación Cuántica Qiskit Framework`
+            } />
+          <Experience
+            company={"CEV. Escuela Superior de Comunicación, Imagen y Sonido"}
+            position={"Grado Superior en Desarrollo de Aplicaciones Multiplataforma"}
+            starttime={"2020"}
+            endtime={"2022"}
+            summary={
+              `Bases de Datos
+                · Entornos de Desarrollo
+                · Formación y Orientación Laboral
+                · Lenguaje de Marcas y Sistemas de Gestión de Información
+                · Programación
+                · Sistemas Informáticos
+                · Diseño, Modelado y Animación 3D
+                · Gamificación y Diseño de Juegos
+                · Acceso a Datos
+                · Desarrollo de Interfaces
+                · Empresa e Iniciativa Emprendedora
+                · Inglés
+                · Programación de Servicios y Procesos
+                · Programación Multimedia y Dispositivos Móviles
+                · Sistemas de Gestión Empresarial
+                · Trabajo Fin de Grado
+                · Formación en Centros de Trabajo`
+            } />
+          <Experience
+            company={"Pearson College London"}
+            position={"Pearson BTEC Level 5 Higher National Diploma in Computing"}
+            starttime={"2020"}
+            endtime={"2022"}
+            summary={
+              `Programming
+                · Networking
+                · Profesional Practice
+                · Database Design & Development
+                · Security
+                · Managing a successful computing project
+                · Computing Research Project
+                · Business Intelligence
+                · Prototyping
+                · Application Program Interfaces (APIs)
+                · Application Development
+                · Software Development Lifeycles
+                · Website Design & Development
+                · Virtual & Augmented Reality Development
+                · Games Development`
+            } />
+          <Experience
+            company={"Centro de Estudios Superiores Fuencarral"}
+            position={"Grado Medio de Técnico en Sistemas Microinformáticos y Redes"}
+            starttime={"2018"}
+            endtime={"2020"}
+            summary={
+              `Linux · Django · Administración de sistemas · MySQL · VirtualBox · XAMPP · Microsoft Office · CSS · Linux Server · Reparación de equipos informáticos · Microsoft Exchange · JavaScript · Packet Tracer · Directorio activo · HTML`
+            } />
+        </Section>
+
         <Section delay={0.4}>
+          <Projects />
+        </Section>
+
+        <Section delay={0.5}>
           <Heading as="h3" variant="section-title">
             Habilidades
           </Heading>
           <Divider
             borderColor={useColorModeValue('#779ECB', '#f3a269')}
-            my={6}
           />
-          <P>
-            Como profesional, he adquirido una amplia gama de competencias que
-            incluyen el desarrollo de aplicaciones multiplataforma con experiencia sólida en la
-            creación de aplicaciones que funcionan en diversas plataformas para abordar las necesidades
-            cambiantes del mercado, habilidades en el diseño y construcción de robustos sistemas
-            BackEnd para aplicaciones y servicios web, y experiencia en la planificación y configuración de
-            infraestructuras de servidor para garantizar un rendimiento óptimo.
-          </P>
+          <Paragraph>
+            Como profesional, he desarrollado aplicaciones multiplataforma, creando soluciones que funcionan en diversas plataformas para adaptarse
+            a las demandas del mercado. Además, tengo experiencia en diseñar y construir sistemas BackEnd robustos para aplicaciones y servicios web.
+            También soy competente en la planificación y configuración de infraestructuras de servidor,
+            asegurando un rendimiento óptimo en todas las etapas de desarrollo.
+          </Paragraph>
           <Heading as="h3" variant="skills" align="center">
-              Software y Lenguajes
+            Software y Lenguajes
           </Heading>
-          <SimpleGrid columns={[1, 2, 2]} align="center">
-            <Box>
-              <p className="ls">
-                VS Code, Android Studio, <br /> ACL Analytics, XCode, Postman,{' '}
-                 <br /> Alteryx Designer, Power BI <br /> Unity Engine, Packet Tracer, <br />
-                Autodesk Maya, VM Virtual Box, 
-              </p>
-            </Box>
-            <Box>
-            <p className="ls">
-                VMWare, Suite Microsoft, <br />
-                Suite Adobe, <br /> Azure Databricks
-                Java, <br/> Swift, Python, HTML, CSS, <br />
-                JS, MySql, PHP, Django, <br />
-                Laravel, Next JS
-              </p>
-            </Box>
-          </SimpleGrid>
-        </Section>
-
-        <Section delay={0.5}>
-          <Heading as="h3" variant="section-title">
-            Curriculum
-          </Heading>
-          <Divider
-            borderColor={useColorModeValue('#779ECB', '#f3a269')}
-            my={6}
-          />
-          <Link
-            maxWidth="50%"
-            ml="25%"
-            href="/files/CV_Diego_Munoz_Herranz.pdf"
-            alt="CV"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              maxWidth="50%"
-              mt={5}
-              className="cv_image"
-              display="inline-block"
-              src="/images/CV_Diego_Munoz.png"
-              alt="CV Image"
-            />
-          </Link>
-        </Section>
-
-        <Section delay={0.6}>
-          <Heading as="h3" variant="section-title">
-            Contacto
-          </Heading>
-          <Divider
-            borderColor={useColorModeValue('#779ECB', '#f3a269')}
-            my={6}
-          />
-          <SimpleGrid columns={[1, 2, 2]}>
-            <List mt={2}>
-              <ListItem>
-                <Link href="https://github.com/diego-tech" target="_blank">
-                  <Button
-                    variant="ghost"
-                    color="linkColor"
-                    leftIcon={<Icon as={IoLogoGithub} />}
-                  >
-                    GitHub
-                  </Button>
-                </Link>
-              </ListItem>
-              <ListItem>
-                <Link
-                  href="https://www.linkedin.com/in/diego-mu%C3%B1oz-herranz-b03a42182/"
-                  target="_blank"
-                >
-                  <Button
-                    variant="ghost"
-                    color="linkColor"
-                    leftIcon={<Icon as={IoLogoLinkedin} />}
-                  >
-                    Linkedin
-                  </Button>
-                </Link>
-              </ListItem>
-            </List>
-            <List mt={2}>
-              <ListItem>
-                <Link href="mailto:diego171200@gmail.com">
-                  <Button
-                    variant="ghost"
-                    color="linkColor"
-                    leftIcon={<Icon as={IoMailSharp} />}
-                  >
-                    diego171200@gmail.com
-                  </Button>
-                </Link>
-              </ListItem>
-              <ListItem>
-                <Link href="tel:+34633543240">
-                  <Button
-                    variant="ghost"
-                    color="linkColor"
-                    leftIcon={<Icon as={IoCallSharp} />}
-                  >
-                    +34 633 54 32 40
-                  </Button>
-                </Link>
-              </ListItem>
-            </List>
-          </SimpleGrid>
+          <br />
+          <Skills />
         </Section>
       </Layout>
     </Box>
