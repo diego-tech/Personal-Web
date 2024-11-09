@@ -12,13 +12,13 @@ export const Experience = ({ company, position, starttime, endtime, summary }) =
 
                     <div>
                         <time
-                            datetime={starttime}
+                            dateTime={starttime}
                             data-title={starttime}>
                             {starttime}
                         </time>
                         {" - "}
                         <time
-                            datetime={endtime}
+                            dateTime={endtime}
                             data-title={endtime}>
                             {endtime}
                         </time>
