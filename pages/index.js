@@ -90,6 +90,18 @@ const IndexPage = () => {
           />
           <Experience
             company={"KPMG"}
+            position={"Data Analyst Senior II"}
+            starttime={"Sep 2024"}
+            endtime={"Actualidad"}
+            summary={
+              `En mi rol actual como Senior II en el área de Data & Analytics, lidero el desarrollo del departamento impulsando la innovación y la implementación de soluciones escalables,  
+gestiono la planificación, seguimiento y ejecución de proyectos de auditoría, coordinando equipos de trabajo y manteniendo comunicación directa con los clientes,  
+garantizo la integridad de los datos contables mediante procesos de validación exhaustivos,  
+y optimizo los procesos de auditoría y análisis de datos aplicando técnicas asistidas por computadora con herramientas avanzadas.  
+`
+            } />
+          <Experience
+            company={"KPMG"}
             position={"Data Analyst Staff II"}
             starttime={"Sep 2023"}
             endtime={"Actualidad"}
