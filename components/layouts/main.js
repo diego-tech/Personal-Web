@@ -55,7 +55,7 @@ const Main = ({ children, router }) => {
                             <Heading as='h2' variant='page-title' pb={2}>
                                 Diego Muñoz Herranz
                             </Heading>
-                            <p>Junior Data Analyst en KPMG España <br /> (Desarrollador y Analista de Datos)</p>
+                            <p>Data Engineer en Dentsu España <br /> (Desarrollador y Analista de Datos)</p>
                             <span style={{ display: 'inline-flex', alignItems: 'center', marginTop: '6px' }}>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
