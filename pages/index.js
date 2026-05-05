@@ -76,8 +76,8 @@ const IndexPage = () => {
             Universidad Europea de Madrid.
           </BioSection>
           <BioSection m={6}>
-            <BioYear>2023</BioYear>
-            Continúo mis andaduras en KPMG continuando con mi ambición y formandome en nuevas tecnologías.
+            <BioYear>2025</BioYear>
+            Continúo mis andaduras en DENTSU continuando con mi ambición y formandome en nuevas tecnologías.
           </BioSection>
         </Section>
 
@@ -89,10 +89,22 @@ const IndexPage = () => {
             borderColor={useColorModeValue('#779ECB', '#f3a269')}
           />
           <Experience
+            company={"DENTSU"}
+            position={"Data Engineer"}
+            starttime={"Sep 2025"}
+            endtime={"Actualidad"}
+            summary={
+              `En mi rol actual como Data Engineer en Dentsu, diseño y desarrollo pipelines de datos robustos y escalables que 
+              permiten la ingesta, transformación y explotación eficiente de grandes volúmenes de información, participo en la definición 
+              de arquitecturas de datos orientadas a analítica avanzada y reporting, optimizo procesos ETL/ELT garantizando calidad, consistencia y 
+              rendimiento, colaboro estrechamente con equipos de negocio y analítica para asegurar la disponibilidad y fiabilidad de los datos, y aplico 
+              buenas prácticas en gobierno del dato, automatización y monitorización para mejorar la eficiencia operativa y la toma de decisiones basada en datos.`
+            } />
+          <Experience
             company={"KPMG"}
             position={"Data Analyst Senior II"}
             starttime={"Sep 2024"}
-            endtime={"Actualidad"}
+            endtime={"Sep 2025"}
             summary={
               `En mi rol actual como Senior II en el área de Data & Analytics, lidero el desarrollo del departamento impulsando la innovación y la implementación de soluciones escalables,  
 gestiono la planificación, seguimiento y ejecución de proyectos de auditoría, coordinando equipos de trabajo y manteniendo comunicación directa con los clientes,  
