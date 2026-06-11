@@ -9,9 +9,6 @@ const Footer = () => {
       <Text>
         &copy; {new Date().getFullYear()} Diego Muñoz Herranz. {t.footer.rights}
       </Text>
-      <Text fontSize="xs" mt={1}>
-        {t.footer.made}
-      </Text>
     </Box>
   )
 }

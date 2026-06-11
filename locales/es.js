@@ -16,14 +16,16 @@ const es = {
         ],
         menuAria: 'Abrir menú de navegación',
         themeToggleAria: 'Cambiar entre modo claro y oscuro',
-        langSwitchTitle: 'Switch to English'
+        langSwitchTitle: 'Switch to English',
+        logoAria: 'Diego Muñoz Herranz — Ir al inicio',
+        backToTop: 'Volver arriba'
     },
     hero: {
         role: 'Data Engineer · Madrid, España',
         tagline:
-            'Construyo pipelines de datos y soluciones de IA que convierten ' +
-            'grandes volúmenes de información en decisiones de negocio. ' +
-            'Actualmente en Dentsu, antes en KPMG y Deloitte.',
+            'Desarrollo productos digitales de principio a fin: aplicaciones web ' +
+            'y móviles, soluciones de datos e IA y pipelines que convierten ' +
+            'información en decisiones. Actualmente en Dentsu, antes en KPMG y Deloitte.',
         ctaTalk: 'Hablemos',
         ctaCV: 'Descargar CV',
         photoAlt: 'Fotografía de Diego Muñoz Herranz',
@@ -218,8 +220,7 @@ const es = {
         ctaLinkedIn: 'LinkedIn'
     },
     footer: {
-        rights: 'Todos los derechos reservados.',
-        made: 'Hecho con Next.js y Chakra UI desde Madrid.'
+        rights: 'Todos los derechos reservados.'
     },
     notFound: {
         title: 'Página no encontrada',

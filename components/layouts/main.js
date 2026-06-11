@@ -14,6 +14,7 @@ import {
 import { EmailIcon, DownloadIcon } from '@chakra-ui/icons';
 import Footer from '../footer';
 import Section from '../section';
+import ScrollToTopButton from '../scroll-to-top-button';
 import { useTranslation } from '../../libs/i18n';
 
 const SITE_URL = 'https://www.dmunoz.dev';
@@ -214,6 +215,7 @@ const Main = ({ children, router }) => {
                 {children}
                 <Footer />
             </Container>
+            <ScrollToTopButton />
         </Box>
     );
 }
