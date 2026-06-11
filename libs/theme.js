@@ -50,7 +50,7 @@ const colors = {
 }
 
 const config = {
-    inititalColorMode: 'light',
+    initialColorMode: 'light',
     useSystemColorMode: true
 }
 
