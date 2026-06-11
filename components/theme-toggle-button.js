@@ -8,7 +8,7 @@ const ThemeToggleButton = () => {
     const { t } = useTranslation()
 
     return (
-        <AnimatePresence initial={false}>
+        <AnimatePresence initial={false} mode="wait">
             <motion.div 
                 style={{display: 'inline-block'}} 
                 key={useColorModeValue('light', 'dark')}

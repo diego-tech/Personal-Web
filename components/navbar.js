@@ -46,12 +46,16 @@ const LanguageSwitcher = () => {
     const router = useRouter()
     const { t, locale } = useTranslation()
     const otherLocale = locale === 'es' ? 'en' : 'es'
+    // Sin hash ni query: si no, el cambio de idioma navega al ancla
+    // de la última sección visitada y la página salta hasta ella.
+    const currentPath = router.asPath.split('#')[0].split('?')[0]
 
     return (
         <Button
             as={NextLink}
-            href={router.asPath}
+            href={currentPath}
             locale={otherLocale}
+            scroll={false}
             size="sm"
             variant="outline"
             fontFamily="'Space Mono'"
