@@ -4,14 +4,16 @@ import { useColorModeValue } from "@chakra-ui/react"
 const GlobalStyles = () => (
     <Global
         styles={`
-            *,*:focus,*:hover{
-                outline:none;
+            /* Quitar el anillo de foco solo en interacción con ratón,
+               manteniéndolo visible para navegación por teclado (WCAG 2.4.7) */
+            *:focus:not(:focus-visible) {
+                outline: none;
                 box-shadow: none;
             }
 
-            /* Remove Focus */
-            *:focus {
-                box-shadow: none !important;
+            *:focus-visible {
+                outline: 2px solid ${useColorModeValue('#779ECB', '#f3a269')};
+                outline-offset: 2px;
             }
 
             /* Scroll Bar Style */
@@ -44,58 +46,54 @@ const GlobalStyles = () => (
                 line-height: 30px;
             }
 
-            .expList {
-                margin-top: 1em;
-                display: flex;
-                flex-direction: column;
-                gap: 32px;
-                list-style: none;
+            .expItem {
+                margin-top: 1.5em;
             }
 
-            .expList article h3 {
+            .expItem h3 {
                 font-weight: 500;
                 color: ${useColorModeValue('#18181a', '#f9fafb')};
                 text-decoration: underline;
                 text-underline-offset: 5px;
             }
 
-            .expList article a {
+            .expItem a {
                 color: ${useColorModeValue('#18181a', '#f9fafb')};
             }
 
-            .expList article a:hover {
+            .expItem a:hover {
                 text-decoration: underline;
             }
 
-            .expList article h3, h4 {
+            .expItem h3, .expItem h4 {
                 margin-top: 0px;
                 margin-bottom: 0px;
             }
 
-            .expList article h4 {
+            .expItem h4 {
                 color: ${useColorModeValue('#18181a', '#f9fafb')};
                 font-weight: lighter;
             }
 
-            .expList header {
+            .expItem header {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
                 margin-bottom: 4px;
             }
 
-            .expList time {
+            .expItem time {
                 color: ${useColorModeValue('#555', '#f9fafb')};
                 font-size: 0.85rem;
                 min-width: 102px;
                 cursor: default;
             }
 
-            .expList footer {
+            .expItem footer {
                 color: ${useColorModeValue('#555', '#f9fafb')};
             }
 
-            .expList footer p {
+            .expItem footer p {
                 font-size: smaller;
             }
 
