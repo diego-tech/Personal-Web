@@ -96,8 +96,7 @@ const NavBar = props => {
                         alignItems="center"
                         fontSize="sm"
                         flexGrow={1}
-                        justifyContent="flex-end"
-                        mr={2}>
+                        justifyContent="center">
                         {t.nav.items.map(item => (
                             <NavLink key={item.href} href={item.href}>
                                 {item.label}
