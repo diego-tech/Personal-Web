@@ -15,7 +15,7 @@ import Layout from '../../components/layouts/article'
 
 const Work = () => {
   return (
-    <Layout title="sports4all">
+    <Layout title="Sports4All">
       <Title>
         Sports4All
         <Badge
@@ -43,6 +43,7 @@ const Work = () => {
           <Link
             href="https://github.com/diego-tech/Sport4All-iOS"
             target="_blank"
+          rel="noopener noreferrer"
           >
             IOS APP
             <ExternalLinkIcon mx="2px" mb="4px" />
@@ -51,6 +52,7 @@ const Work = () => {
           <Link
             href="https://github.com/diego-tech/Sport4All-API"
             target="_blank"
+            rel="noopener noreferrer"
             ml={4}
           >
             API
@@ -60,6 +62,7 @@ const Work = () => {
           <Link
             href="https://github.com/diego-tech/Sports4All-QR"
             target="_blank"
+            rel="noopener noreferrer"
             ml={4}
           >
             QR Code Verifier
@@ -77,7 +80,7 @@ const Work = () => {
           </span>
         </ListItem>
       </List>
-      <Heading as="h3" variant="section-title">
+      <Heading as="h2" variant="section-title">
         Multimedia
       </Heading>
       <Divider borderColor={useColorModeValue('#779ECB', '#f3a269')} my={6} />

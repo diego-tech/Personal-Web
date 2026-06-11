@@ -3,7 +3,6 @@ import {
     Container,
     Box,
     Stack,
-    Heading,
     Flex,
     useColorModeValue
 } from '@chakra-ui/react'
@@ -41,12 +40,7 @@ const NavBar = props => {
                     justify="space-between"
                     verticalAlign="center">
                     <Flex align="center" mr={5}>
-                        <Heading
-                            as="h1"
-                            size="lg"
-                            letterSpacing={'tighter'}>
-                            <Logo />
-                        </Heading>
+                        <Logo />
                     </Flex>
                     <Stack
                         direction={{ base: 'column', md: 'row' }}

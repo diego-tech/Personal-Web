@@ -17,9 +17,9 @@ import { Skills } from '../components/skills'
 const IndexPage = () => {
   return (
     <Box>
-      <Layout title="Sobre Mí">
+      <Layout>
         <Section delay={0.1}>
-          <Heading as="h3" variant="section-title">
+          <Heading as="h2" variant="section-title">
             Sobre Mí
           </Heading>
           <Divider
@@ -32,7 +32,7 @@ const IndexPage = () => {
             un Máster en Inteligencia Artificial y Data Science.
           </Paragraph>
           <Paragraph>
-            He trabajado en empresas como Deloitte y KPMG, desempeñándo análisis
+            He trabajado en empresas como Deloitte y KPMG, desempeñando análisis
             de datos y auditoría IT, y siempre buscando nuevos retos y oportunidades
             para contribuir al avance tecnológico.
           </Paragraph>
@@ -52,6 +52,7 @@ const IndexPage = () => {
             <Link
               href="https://scratch.mit.edu/projects/79776564/embed"
               target="_blank"
+              rel="noopener noreferrer"
               textDecoration="underline"
             >
               Ver
@@ -65,7 +66,7 @@ const IndexPage = () => {
           <BioSection m={6}>
             <BioYear>2022</BioYear>
             Finalizo el Grado Superior en Desarrollo de Aplicaciones
-            Multiplataforma junto al Higher Nacional Diploma in Computing y
+            Multiplataforma junto al Higher National Diploma in Computing y
             comienzo a trabajar como analista de datos en Deloitte.
           </BioSection>
           <BioSection m={6}>
@@ -77,12 +78,12 @@ const IndexPage = () => {
           </BioSection>
           <BioSection m={6}>
             <BioYear>2025</BioYear>
-            Continúo mis andaduras en DENTSU continuando con mi ambición y formandome en nuevas tecnologías.
+            Continúo mis andaduras en DENTSU continuando con mi ambición y formándome en nuevas tecnologías.
           </BioSection>
         </Section>
 
         <Section delay={0.2}>
-          <Heading as="h3" variant="section-title">
+          <Heading as="h2" variant="section-title">
             Experiencia Laboral
           </Heading>
           <Divider
@@ -106,7 +107,7 @@ const IndexPage = () => {
             starttime={"Sep 2024"}
             endtime={"Sep 2025"}
             summary={
-              `En mi rol actual como Senior II en el área de Data & Analytics, lidero el desarrollo del departamento impulsando la innovación y la implementación de soluciones escalables,  
+              `Como Senior II en el área de Data & Analytics, lidero el desarrollo del departamento impulsando la innovación y la implementación de soluciones escalables,  
 gestiono la planificación, seguimiento y ejecución de proyectos de auditoría, coordinando equipos de trabajo y manteniendo comunicación directa con los clientes,  
 garantizo la integridad de los datos contables mediante procesos de validación exhaustivos,  
 y optimizo los procesos de auditoría y análisis de datos aplicando técnicas asistidas por computadora con herramientas avanzadas.  
@@ -116,9 +117,9 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
             company={"KPMG"}
             position={"Data Analyst Staff II"}
             starttime={"Sep 2023"}
-            endtime={"Actualidad"}
+            endtime={"Sep 2024"}
             summary={
-              `En mi rol actual, lidero la migración a Azure Databricks y 
+              `En este rol lideré la migración a Azure Databricks y 
               el desarrollo de aplicaciones estratégicas para el departamento 
               de auditoría, optimizando procesos con Python y PySpark, y gestionando 
               datos clave para Data Analytics y Auditoría Financiera en SQL Server 
@@ -153,7 +154,7 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
         </Section>
 
         <Section delay={0.3}>
-          <Heading as="h3" variant="section-title">
+          <Heading as="h2" variant="section-title">
             Educación
           </Heading>
           <Divider
@@ -161,7 +162,7 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
           />
           <Experience
             company={"Universidad Europea"}
-            position={"Master en Inteligencia Artifiial"}
+            position={"Máster en Inteligencia Artificial"}
             starttime={"2022"}
             endtime={"2023"}
             summary={
@@ -212,7 +213,7 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
             summary={
               `Programming
                 · Networking
-                · Profesional Practice
+                · Professional Practice
                 · Database Design & Development
                 · Security
                 · Managing a successful computing project
@@ -221,7 +222,7 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
                 · Prototyping
                 · Application Program Interfaces (APIs)
                 · Application Development
-                · Software Development Lifeycles
+                · Software Development Lifecycles
                 · Website Design & Development
                 · Virtual & Augmented Reality Development
                 · Games Development`
@@ -241,7 +242,7 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
         </Section>
 
         <Section delay={0.5}>
-          <Heading as="h3" variant="section-title">
+          <Heading as="h2" variant="section-title">
             Habilidades
           </Heading>
           <Divider

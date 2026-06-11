@@ -6,6 +6,41 @@ import Footer from '../footer';
 import Section from '../section';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 
+const SITE_URL = 'https://www.dmunoz.dev';
+const SITE_DESCRIPTION =
+    'Portfolio de Diego Muñoz Herranz, Data Engineer en Madrid. Pipelines de datos, ' +
+    'Azure Databricks, Python, PySpark e Inteligencia Artificial. Proyectos, experiencia y contacto.';
+
+const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Diego Muñoz Herranz',
+    url: SITE_URL,
+    image: `${SITE_URL}/images/diego.webp`,
+    jobTitle: 'Data Engineer',
+    worksFor: {
+        '@type': 'Organization',
+        name: 'Dentsu'
+    },
+    address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Madrid',
+        addressCountry: 'ES'
+    },
+    sameAs: [
+        'https://www.linkedin.com/in/diego-mu%C3%B1oz-herranz-b03a42182/',
+        'https://github.com/diego-tech'
+    ],
+    knowsAbout: [
+        'Data Engineering',
+        'Python',
+        'PySpark',
+        'Azure Databricks',
+        'Machine Learning',
+        'SQL'
+    ]
+};
+
 const Main = ({ children, router }) => {
     const [showSpan, setShowSpan] = useState(true);
 
@@ -14,18 +49,36 @@ const Main = ({ children, router }) => {
             setShowSpan(false);
         }, 10000);
 
-        return () => clearTimeout(timer); 
+        return () => clearTimeout(timer);
     }, []);
+
+    const canonicalUrl = `${SITE_URL}${router.asPath === '/' ? '' : router.asPath}`.split('?')[0];
 
     return (
         <Box as="main" pb={8}>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="description" content="Diego's Homepage" />
+                <meta name="description" content={SITE_DESCRIPTION} />
                 <meta name="author" content="Diego Muñoz Herranz" />
-                <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+                <link rel="canonical" href={canonicalUrl} />
+                <link rel="apple-touch-icon" href="/images/logo.png" />
                 <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
-                <title>Diego Muñoz - Portafolio</title>
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Diego Muñoz Herranz" />
+                <meta property="og:title" content="Diego Muñoz Herranz - Data Engineer" />
+                <meta property="og:description" content={SITE_DESCRIPTION} />
+                <meta property="og:url" content={canonicalUrl} />
+                <meta property="og:image" content={`${SITE_URL}/images/diego.webp`} />
+                <meta property="og:locale" content="es_ES" />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content="Diego Muñoz Herranz - Data Engineer" />
+                <meta name="twitter:description" content={SITE_DESCRIPTION} />
+                <meta name="twitter:image" content={`${SITE_URL}/images/diego.webp`} />
+                <title>Diego Muñoz Herranz - Data Engineer | Portfolio</title>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+                />
             </Head>
 
             <NavBar path={router.asPath} />
@@ -49,10 +102,10 @@ const Main = ({ children, router }) => {
                                 borderRadius="30"
                                 borderColor={useColorModeValue('#18181a', '#f9fafb')}
                                 src="/images/diego.webp"
-                                alt="Profile Image" />
+                                alt="Fotografía de Diego Muñoz Herranz" />
                         </Box>
                         <Box flexGrow={1} align="center" ml={6}>
-                            <Heading as='h2' variant='page-title' pb={2}>
+                            <Heading as='h1' variant='page-title' pb={2}>
                                 Diego Muñoz Herranz
                             </Heading>
                             <p>Data Engineer en Dentsu España <br /> (Desarrollador y Analista de Datos)</p>
@@ -79,10 +132,8 @@ const Main = ({ children, router }) => {
                             <footer className='rssFooter'>
                                 <a
                                     className='rssLink'
-                                    href={`mailto:diego171200@gmail.com`}
-                                    title="Enviar un correo electrónico a Diego Muñoz Herranz al correo diego171200@gmail.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    href="mailto:diego171200@gmail.com"
+                                    title="Enviar un correo electrónico a Diego Muñoz Herranz"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -100,10 +151,8 @@ const Main = ({ children, router }) => {
                                 </a>
                                 <a
                                     className='rssLink'
-                                    href={`tel:633543240`}
-                                    title="Enviar un correo electrónico a Diego Muñoz Herranz al correo diego171200@gmail.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer">
+                                    href="tel:+34633543240"
+                                    title="Llamar a Diego Muñoz Herranz">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="16"

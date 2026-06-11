@@ -41,6 +41,7 @@ const Work = () => {
             <Link
               href="https://github.com/diego-tech/cesfuencarral"
               target="_blank"
+            rel="noopener noreferrer"
             >
               Código GitHub <ExternalLinkIcon mx="2px" mb="4px" />
             </Link>
@@ -54,7 +55,7 @@ const Work = () => {
             <span>Django, SASS, JS</span>
           </ListItem>
         </List>
-        <Heading as="h3" variant="section-title">
+        <Heading as="h2" variant="section-title">
           Multimedia
         </Heading>
         <Divider borderColor={useColorModeValue('#779ECB', '#f3a269')} my={6} />

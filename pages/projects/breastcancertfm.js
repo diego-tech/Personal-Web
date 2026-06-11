@@ -15,7 +15,7 @@ import Layout from '../../components/layouts/article'
 
 const Work = () => {
     return (
-        <Layout title="breastCancerTFM">
+        <Layout title="Breast Cancer TFM">
             <Title>
                 Breast Cancer TFM
                 <Badge
@@ -29,7 +29,7 @@ const Work = () => {
                 </Badge>
             </Title>
             <P>
-                Este proyecto tiene como objetivo desarrollar un mnodelo de inteligencia artifical capaz
+                Este proyecto tiene como objetivo desarrollar un modelo de inteligencia artificial capaz
                 de identificar la malignidad de las masas tumorales en imágenes médicas de cáncer de mama.
             </P>
             <P>
@@ -75,6 +75,7 @@ const Work = () => {
                     <Link
                         href="https://github.com/diego-tech/TFM_Breast_Cancer_Classification"
                         target="_blank"
+                    rel="noopener noreferrer"
                     >
                         Models Code
                         <ExternalLinkIcon mx="2px" mb="4px" />
@@ -83,6 +84,7 @@ const Work = () => {
                     <Link
                         href="https://github.com/diego-tech/TFM_Breast_Cancer_Classification_App"
                         target="_blank"
+                        rel="noopener noreferrer"
                         ml={4}
                     >
                         Web APP
@@ -100,7 +102,7 @@ const Work = () => {
                     </span>
                 </ListItem>
             </List>
-            <Heading as="h3" variant="section-title">
+            <Heading as="h2" variant="section-title">
                 Multimedia
             </Heading>
             <Divider borderColor={useColorModeValue('#779ECB', '#f3a269')} my={6} />
