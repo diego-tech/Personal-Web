@@ -14,11 +14,9 @@ import {
 import { EmailIcon, DownloadIcon } from '@chakra-ui/icons';
 import Footer from '../footer';
 import Section from '../section';
+import { useTranslation } from '../../libs/i18n';
 
 const SITE_URL = 'https://www.dmunoz.dev';
-const SITE_DESCRIPTION =
-    'Portfolio de Diego Muñoz Herranz, Data Engineer en Madrid. Pipelines de datos, ' +
-    'Azure Databricks, Python, PySpark e Inteligencia Artificial. Proyectos, experiencia y contacto.';
 
 const personJsonLd = {
     '@context': 'https://schema.org',
@@ -51,30 +49,37 @@ const personJsonLd = {
 };
 
 const Main = ({ children, router }) => {
-    const canonicalUrl = `${SITE_URL}${router.asPath === '/' ? '' : router.asPath}`.split('?')[0];
+    const { t, locale } = useTranslation();
+    const pathname = router.asPath.split('?')[0];
+    const pagePath = pathname === '/' ? '' : pathname;
+    const localePrefix = locale === 'es' ? '' : `/${locale}`;
+    const canonicalUrl = `${SITE_URL}${localePrefix}${pagePath}`;
     const accent = useColorModeValue('#5A82B8', '#f3a269');
 
     return (
         <Box as="main" pb={8}>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="description" content={SITE_DESCRIPTION} />
+                <meta name="description" content={t.meta.description} />
                 <meta name="author" content="Diego Muñoz Herranz" />
                 <link rel="canonical" href={canonicalUrl} />
+                <link rel="alternate" hrefLang="es" href={`${SITE_URL}${pagePath}`} />
+                <link rel="alternate" hrefLang="en" href={`${SITE_URL}/en${pagePath}`} />
+                <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${pagePath}`} />
                 <link rel="apple-touch-icon" href="/images/logo.png" />
                 <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Diego Muñoz Herranz" />
-                <meta property="og:title" content="Diego Muñoz Herranz - Data Engineer" />
-                <meta property="og:description" content={SITE_DESCRIPTION} />
+                <meta property="og:title" content={t.meta.ogTitle} />
+                <meta property="og:description" content={t.meta.description} />
                 <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:image" content={`${SITE_URL}/images/diego.webp`} />
-                <meta property="og:locale" content="es_ES" />
+                <meta property="og:locale" content={t.meta.ogLocale} />
                 <meta name="twitter:card" content="summary" />
-                <meta name="twitter:title" content="Diego Muñoz Herranz - Data Engineer" />
-                <meta name="twitter:description" content={SITE_DESCRIPTION} />
+                <meta name="twitter:title" content={t.meta.ogTitle} />
+                <meta name="twitter:description" content={t.meta.description} />
                 <meta name="twitter:image" content={`${SITE_URL}/images/diego.webp`} />
-                <title>Diego Muñoz Herranz - Data Engineer | Portfolio</title>
+                <title>{t.meta.title}</title>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
@@ -103,19 +108,17 @@ const Main = ({ children, router }) => {
                                 borderRadius="full"
                                 borderColor={accent}
                                 src="/images/diego.webp"
-                                alt="Fotografía de Diego Muñoz Herranz" />
+                                alt={t.hero.photoAlt} />
                         </Box>
                         <Box flexGrow={1} mt={{ base: 4, md: 0 }} textAlign={{ base: 'center', md: 'left' }}>
                             <Heading as='h1' variant='page-title' pb={1}>
                                 Diego Muñoz Herranz
                             </Heading>
                             <Text fontWeight="bold" color={accent}>
-                                Data Engineer · Madrid, España
+                                {t.hero.role}
                             </Text>
                             <Text fontSize="sm" mt={2} maxW="md" mx={{ base: 'auto', md: 0 }}>
-                                Construyo pipelines de datos y soluciones de IA que convierten
-                                grandes volúmenes de información en decisiones de negocio.
-                                Actualmente en Dentsu, antes en KPMG y Deloitte.
+                                {t.hero.tagline}
                             </Text>
                             <Stack
                                 direction={{ base: 'column', sm: 'row' }}
@@ -131,7 +134,7 @@ const Main = ({ children, router }) => {
                                     color={useColorModeValue('white', '#18181a')}
                                     _hover={{ opacity: 0.85, transform: 'translateY(-2px)' }}
                                     size="sm">
-                                    Hablemos
+                                    {t.hero.ctaTalk}
                                 </Button>
                                 <Button
                                     as="a"
@@ -144,7 +147,7 @@ const Main = ({ children, router }) => {
                                     color={accent}
                                     _hover={{ bg: useColorModeValue('#5A82B815', '#f3a26915'), transform: 'translateY(-2px)' }}
                                     size="sm">
-                                    Descargar CV
+                                    {t.hero.ctaCV}
                                 </Button>
                             </Stack>
 
@@ -152,7 +155,7 @@ const Main = ({ children, router }) => {
                                 <a
                                     className='rssLink'
                                     href="mailto:diego171200@gmail.com"
-                                    title="Enviar un correo electrónico a Diego Muñoz Herranz"
+                                    title={t.hero.emailTitle}
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +174,7 @@ const Main = ({ children, router }) => {
                                 <a
                                     className='rssLink'
                                     href="tel:+34633543240"
-                                    title="Llamar a Diego Muñoz Herranz">
+                                    title={t.hero.phoneTitle}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="16"
@@ -190,7 +193,7 @@ const Main = ({ children, router }) => {
                                 <a
                                     className='rssLink'
                                     href='https://www.linkedin.com/in/diego-mu%C3%B1oz-herranz-b03a42182/'
-                                    title='Visitar el perfil de Diego Muñoz en Linkedin'
+                                    title={t.hero.linkedinTitle}
                                     target='_blank'
                                     rel='noopener noreferrer'>
                                     <svg

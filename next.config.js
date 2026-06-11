@@ -8,6 +8,13 @@ const securityHeaders = [
 module.exports = {
     reactStrictMode: true,
     swcMinify: true,
+    i18n: {
+        locales: ['es', 'en'],
+        defaultLocale: 'es',
+        // Sin detección automática: la web es en español por defecto
+        // y el cambio de idioma es siempre una decisión del visitante.
+        localeDetection: false
+    },
     async headers() {
         return [
             {

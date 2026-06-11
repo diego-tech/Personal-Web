@@ -1,9 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { useTranslation } from "../libs/i18n";
 
 const ThemeToggleButton = () => {
     const { toggleColorMode } = useColorMode()
+    const { t } = useTranslation()
 
     return (
         <AnimatePresence initial={false}>
@@ -15,7 +17,7 @@ const ThemeToggleButton = () => {
                 exit={{y: 20, opacity: 0}}
                 transition={{ duration: 0.2 }}>
                 <IconButton 
-                    aria-label="Cambiar entre modo claro y oscuro"
+                    aria-label={t.nav.themeToggleAria}
                     colorScheme={useColorModeValue('purple', 'orange')}
                     icon={useColorModeValue(<MoonIcon />, <SunIcon/>)}
                     onClick={toggleColorMode}>

@@ -12,12 +12,16 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, ProjectImage, Meta } from '../../components/project'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
+import { useTranslation } from '../../libs/i18n'
 
 const Work = () => {
+  const { t } = useTranslation()
+  const project = t.projectPages.securitysystem
+
   return (
-    <Layout title="Sistema de Seguridad">
+    <Layout title={project.layoutTitle}>
         <Title>
-          Sistema de Seguridad
+          {project.title}
           <Badge
             bgColor={useColorModeValue('#779ECB', '#f3a269')}
             color={useColorModeValue('white', 'black')}
@@ -25,59 +29,53 @@ const Work = () => {
             mb={1}
           >
             {' '}
-            2021{' '}
+            {project.year}{' '}
           </Badge>
         </Title>
-        <P>
-          Aplicación Android realizada en Java, consiste en una aplicación que
-          se conecta a una API que está conectada a un sistema de seguridad.
-          Desde nuestra aplicación podremos comprobar el estado del sistema de
-          seguridad y cambiarlo, también podremos ver el historial de los
-          estados.
-        </P>
+        <P>{project.intro}</P>
         <List my={4}>
           <ListItem>
-            <Meta>Código</Meta>
+            <Meta>{t.projectPage.code}</Meta>
             <Link
               href="https://github.com/diego-tech/Security-System"
               target="_blank"
-            rel="noopener noreferrer"
+              rel="noopener noreferrer"
             >
-              Código GitHub <ExternalLinkIcon mx="2px" mb="4px" />
+              {t.projectPage.githubCode} <ExternalLinkIcon mx="2px" mb="4px" />
             </Link>
           </ListItem>
           <ListItem>
-            <Meta>Plataforma</Meta>
-            <span>Android</span>
+            <Meta>{t.projectPage.platform}</Meta>
+            <span>{project.platform}</span>
           </ListItem>
           <ListItem>
-            <Meta>Stack</Meta>
-            <span>Java</span>
+            <Meta>{t.projectPage.stack}</Meta>
+            <span>{project.stack}</span>
           </ListItem>
         </List>
         <Heading as="h2" variant="section-title">
-          Multimedia
+          {t.projectPage.multimedia}
         </Heading>
         <Divider borderColor={useColorModeValue('#779ECB', '#f3a269')} my={6} />
 
         <SimpleGrid columns={2} gap={5}>
           <ProjectImage
             src="/images/projects/securitysystem/1.png"
-            alt="Sistema de Seguridad"
+            alt={`${project.title} - 1`}
           />
           <ProjectImage
             src="/images/projects/securitysystem/2.png"
-            alt="Sistema de Seguridad"
+            alt={`${project.title} - 2`}
           />
         </SimpleGrid>
         <SimpleGrid columns={2} gap={5}>
           <ProjectImage
             src="/images/projects/securitysystem/5.png"
-            alt="Sistema de Seguridad"
+            alt={`${project.title} - 3`}
           />
           <ProjectImage
             src="/images/projects/securitysystem/4.png"
-            alt="Sistema de Seguridad"
+            alt={`${project.title} - 4`}
           />
         </SimpleGrid>
     </Layout>

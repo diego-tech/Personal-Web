@@ -5,7 +5,7 @@ import theme from '../libs/theme'
 export default class Document extends NextDocument {
     render () {
         return(
-            <Html lang="es">
+            <Html lang={this.props.__NEXT_DATA__.locale || 'es'}>
                 <Head>
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -11,12 +11,16 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, ProjectImage, Meta } from '../../components/project'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
+import { useTranslation } from '../../libs/i18n'
 
 const Work = () => {
+  const { t } = useTranslation()
+  const project = t.projectPages.cesfuencarral
+
   return (
-    <Layout title="Ces Fuencarral">
+    <Layout title={project.layoutTitle}>
         <Title>
-          Web Ces Fuencarral
+          {project.title}
           <Badge
             bgColor={useColorModeValue('#779ECB', '#f3a269')}
             color={useColorModeValue('white', 'black')}
@@ -24,65 +28,41 @@ const Work = () => {
             mb={1}
           >
             {' '}
-            2020{' '}
+            {project.year}{' '}
           </Badge>
         </Title>
-        <P>
-          Aplicación Web que corresponde al proyecto de final de curso del CFGM
-          de Sistemas Microinformáticos y Redes. Es una aplicacición realizada
-          en Python y su framework web Django que consiste en la
-          reinterpretación del sitio web del centro de estudios y una plataforma
-          en la que los alumnos pueden subir consultas y conversar con
-          profesores y otros alumnos.
-        </P>
+        <P>{project.intro}</P>
         <List my={4}>
           <ListItem>
-            <Meta>Código</Meta>
+            <Meta>{t.projectPage.code}</Meta>
             <Link
               href="https://github.com/diego-tech/cesfuencarral"
               target="_blank"
-            rel="noopener noreferrer"
+              rel="noopener noreferrer"
             >
-              Código GitHub <ExternalLinkIcon mx="2px" mb="4px" />
+              {t.projectPage.githubCode} <ExternalLinkIcon mx="2px" mb="4px" />
             </Link>
           </ListItem>
           <ListItem>
-            <Meta>Plataforma</Meta>
-            <span>Windows/MacOs/Linux</span>
+            <Meta>{t.projectPage.platform}</Meta>
+            <span>{project.platform}</span>
           </ListItem>
           <ListItem>
-            <Meta>Stack</Meta>
-            <span>Django, SASS, JS</span>
+            <Meta>{t.projectPage.stack}</Meta>
+            <span>{project.stack}</span>
           </ListItem>
         </List>
         <Heading as="h2" variant="section-title">
-          Multimedia
+          {t.projectPage.multimedia}
         </Heading>
         <Divider borderColor={useColorModeValue('#779ECB', '#f3a269')} my={6} />
-        <ProjectImage
-          src="/images/projects/cesfuencarral/1.png"
-          alt="Ces Fuencarral"
-        />
-        <ProjectImage
-          src="/images/projects/cesfuencarral/2.png"
-          alt="Ces Fuencarral"
-        />
-        <ProjectImage
-          src="/images/projects/cesfuencarral/3.png"
-          alt="Ces Fuencarral"
-        />
-        <ProjectImage
-          src="/images/projects/cesfuencarral/4.png"
-          alt="Ces Fuencarral"
-        />
-        <ProjectImage
-          src="/images/projects/cesfuencarral/5.png"
-          alt="Ces Fuencarral"
-        />
-        <ProjectImage
-          src="/images/projects/cesfuencarral/6.png"
-          alt="Ces Fuencarral"
-        />
+        {[1, 2, 3, 4, 5, 6].map(n => (
+          <ProjectImage
+            key={n}
+            src={`/images/projects/cesfuencarral/${n}.png`}
+            alt={`${project.title} - ${n}`}
+          />
+        ))}
     </Layout>
   )
 }

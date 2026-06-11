@@ -15,228 +15,79 @@ import Layout from '../components/layouts/article'
 import { Experience } from '../components/experience'
 import Projects from '../components/projects'
 import { Skills } from '../components/skills'
+import { useTranslation } from '../libs/i18n'
+
+const SCRATCH_URL = 'https://scratch.mit.edu/projects/79776564/embed'
 
 const IndexPage = () => {
+  const { t } = useTranslation()
+  const dividerColor = useColorModeValue('#779ECB', '#f3a269')
+  const accent = useColorModeValue('#5A82B8', '#f3a269')
+
   return (
     <Box>
       <Layout>
         <Section delay={0.1} id="sobre-mi">
           <Heading as="h2" variant="section-title">
-            Sobre Mí
+            {t.about.title}
           </Heading>
-          <Divider
-            borderColor={useColorModeValue('#779ECB', '#f3a269')}
-          />
-          <Paragraph>
-            ¡Hola! Soy Diego, un apasionado desarrollador de software y
-            entusiasta de la tecnología. Desde que comencé en 2014,
-            he acumulado una sólida formación, incluyendo un Grado Superior en Desarrollo de Aplicaciones Multiplataforma y
-            un Máster en Inteligencia Artificial y Data Science.
-          </Paragraph>
-          <Paragraph>
-            He trabajado en empresas como Deloitte y KPMG, desempeñando análisis
-            de datos y auditoría IT, y siempre buscando nuevos retos y oportunidades
-            para contribuir al avance tecnológico.
-          </Paragraph>
-          <Paragraph>
-            Me caracterizo por ser responsable, dinámico y adaptable,
-            disfrutando de la colaboración en equipo y la resolución creativa de problemas.
-            Mi objetivo es desarrollar soluciones innovadoras que tengan un impacto positivo en la sociedad.
-          </Paragraph>
-          <BioSection m={6}>
-            <BioYear>2000</BioYear>
-            Nacido en Madrid, España
-          </BioSection>
-          <BioSection m={6}>
-            <BioYear>2014</BioYear>
-            Empiezo mis andaduras en la informática y la programación y realizo
-            mi primer juego en Scratch{' '}
-            <Link
-              href="https://scratch.mit.edu/projects/79776564/embed"
-              target="_blank"
-              rel="noopener noreferrer"
-              textDecoration="underline"
-            >
-              Ver
-            </Link>
-          </BioSection>
-          <BioSection m={6}>
-            <BioYear>2020</BioYear>
-            Finalizo el Grado Medio de Sistemas Microinformáticos y Redes y
-            empiezo a desarrollar mis primeros proyectos.
-          </BioSection>
-          <BioSection m={6}>
-            <BioYear>2022</BioYear>
-            Finalizo el Grado Superior en Desarrollo de Aplicaciones
-            Multiplataforma junto al Higher National Diploma in Computing y
-            comienzo a trabajar como analista de datos en Deloitte.
-          </BioSection>
-          <BioSection m={6}>
-            <BioYear>2022 - Sep</BioYear>
-            Con la idea de avanzar en mi carrera profesional dejo la anterior empresa y
-            comienzo a trabajar como Junior IT Audit en KPMG, también empiezo a introducirme en el
-            Data Science y Estudio un Máster en Inteligencia Artificial y Data Science en la
-            Universidad Europea de Madrid.
-          </BioSection>
-          <BioSection m={6}>
-            <BioYear>2025</BioYear>
-            Continúo mis andaduras en DENTSU continuando con mi ambición y formándome en nuevas tecnologías.
-          </BioSection>
+          <Divider borderColor={dividerColor} />
+          {t.about.paragraphs.map(paragraph => (
+            <Paragraph key={paragraph.slice(0, 24)}>{paragraph}</Paragraph>
+          ))}
+          {t.about.bio.map(entry => (
+            <BioSection m={6} key={entry.year}>
+              <BioYear>{entry.year}</BioYear>
+              {entry.text}
+              {entry.linkLabel && (
+                <>
+                  {' '}
+                  <Link
+                    href={SCRATCH_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    textDecoration="underline"
+                  >
+                    {entry.linkLabel}
+                  </Link>
+                </>
+              )}
+            </BioSection>
+          ))}
         </Section>
 
         <Section delay={0.2} id="experiencia">
           <Heading as="h2" variant="section-title">
-            Experiencia Laboral
+            {t.experience.title}
           </Heading>
-          <Divider
-            borderColor={useColorModeValue('#779ECB', '#f3a269')}
-          />
-          <Experience
-            company={"DENTSU"}
-            position={"Data Engineer"}
-            starttime={"Sep 2025"}
-            endtime={"Actualidad"}
-            summary={
-              `En mi rol actual como Data Engineer en Dentsu, diseño y desarrollo pipelines de datos robustos y escalables que 
-              permiten la ingesta, transformación y explotación eficiente de grandes volúmenes de información, participo en la definición 
-              de arquitecturas de datos orientadas a analítica avanzada y reporting, optimizo procesos ETL/ELT garantizando calidad, consistencia y 
-              rendimiento, colaboro estrechamente con equipos de negocio y analítica para asegurar la disponibilidad y fiabilidad de los datos, y aplico 
-              buenas prácticas en gobierno del dato, automatización y monitorización para mejorar la eficiencia operativa y la toma de decisiones basada en datos.`
-            } />
-          <Experience
-            company={"KPMG"}
-            position={"Data Analyst Senior II"}
-            starttime={"Sep 2024"}
-            endtime={"Sep 2025"}
-            summary={
-              `Como Senior II en el área de Data & Analytics, lidero el desarrollo del departamento impulsando la innovación y la implementación de soluciones escalables,  
-gestiono la planificación, seguimiento y ejecución de proyectos de auditoría, coordinando equipos de trabajo y manteniendo comunicación directa con los clientes,  
-garantizo la integridad de los datos contables mediante procesos de validación exhaustivos,  
-y optimizo los procesos de auditoría y análisis de datos aplicando técnicas asistidas por computadora con herramientas avanzadas.  
-`
-            } />
-          <Experience
-            company={"KPMG"}
-            position={"Data Analyst Staff II"}
-            starttime={"Sep 2023"}
-            endtime={"Sep 2024"}
-            summary={
-              `En este rol lideré la migración a Azure Databricks y 
-              el desarrollo de aplicaciones estratégicas para el departamento 
-              de auditoría, optimizando procesos con Python y PySpark, y gestionando 
-              datos clave para Data Analytics y Auditoría Financiera en SQL Server 
-              y Alteryx. Además, me encargo de la comunicación y gestión de datos 
-              con los clientes.`
-            } />
-          <Experience
-            company={"KPMG"}
-            position={"Data Analyst Staff I"}
-            starttime={"Sep 2022"}
-            endtime={"Sep 2023"}
-            summary={
-              `Migración de sistemas desde SQL Server hacia Azure Databricks utilizando Python y PySpark, optimizo datos con Alteryx y desarrollo 
-              aplicaciones web con Python y Django. Además, proceso datos para análisis y 
-              auditoría financiera, contribuyendo al éxito empresarial mediante la toma 
-              de decisiones informadas y la mejora de la eficiencia y escalabilidad.`
-            } />
-          <Experience
-            company={"Deloitte"}
-            position={"Junior Delivery Analyst"}
-            starttime={"Abr 2022"}
-            endtime={"Aug 2023"}
-            summary={
-              `Analista de Datos y Experto en Python en una entidad 
-              financiera de España, me encargaba del análisis estratégico 
-              de datos para la toma de decisiones. Utilizaba herramientas como 
-              PySpark y HUE en entornos Big Data y espacios cloud para extraer y 
-              analizar grandes volúmenes de información. Mi trabajo incluía crear informes 
-              detallados para respaldar decisiones clave, optimizando procesos y generando 
-              valor para la entidad financiera y sus clientes.`
-            } />
+          <Divider borderColor={dividerColor} />
+          {t.experience.entries.map(entry => (
+            <Experience
+              key={`${entry.company}-${entry.position}`}
+              company={entry.company}
+              position={entry.position}
+              starttime={entry.starttime}
+              endtime={entry.endtime}
+              summary={entry.summary}
+            />
+          ))}
         </Section>
 
         <Section delay={0.3} id="educacion">
           <Heading as="h2" variant="section-title">
-            Educación
+            {t.education.title}
           </Heading>
-          <Divider
-            borderColor={useColorModeValue('#779ECB', '#f3a269')}
-          />
-          <Experience
-            company={"Universidad Europea"}
-            position={"Máster en Inteligencia Artificial"}
-            starttime={"2022"}
-            endtime={"2023"}
-            summary={
-              `Machine Learning
-                · Data Science
-                · Python/R
-                · Pytorch
-                · RapidMiner Studio
-                · Redes Neuronales y Redes Convolucionales
-                · Deep Learning
-                · Cognitive Computing
-                · Reconocimiento de voz y asistentes virtuales
-                · Despliegue de modelos en producción.
-                · IBM Cloud
-                · Microsoft Azure
-                · TensorFlow/Keras
-                · Computación Cuántica Qiskit Framework`
-            } />
-          <Experience
-            company={"CEV. Escuela Superior de Comunicación, Imagen y Sonido"}
-            position={"Grado Superior en Desarrollo de Aplicaciones Multiplataforma"}
-            starttime={"2020"}
-            endtime={"2022"}
-            summary={
-              `Bases de Datos
-                · Entornos de Desarrollo
-                · Formación y Orientación Laboral
-                · Lenguaje de Marcas y Sistemas de Gestión de Información
-                · Programación
-                · Sistemas Informáticos
-                · Diseño, Modelado y Animación 3D
-                · Gamificación y Diseño de Juegos
-                · Acceso a Datos
-                · Desarrollo de Interfaces
-                · Empresa e Iniciativa Emprendedora
-                · Inglés
-                · Programación de Servicios y Procesos
-                · Programación Multimedia y Dispositivos Móviles
-                · Sistemas de Gestión Empresarial
-                · Trabajo Fin de Grado
-                · Formación en Centros de Trabajo`
-            } />
-          <Experience
-            company={"Pearson College London"}
-            position={"Pearson BTEC Level 5 Higher National Diploma in Computing"}
-            starttime={"2020"}
-            endtime={"2022"}
-            summary={
-              `Programming
-                · Networking
-                · Professional Practice
-                · Database Design & Development
-                · Security
-                · Managing a successful computing project
-                · Computing Research Project
-                · Business Intelligence
-                · Prototyping
-                · Application Program Interfaces (APIs)
-                · Application Development
-                · Software Development Lifecycles
-                · Website Design & Development
-                · Virtual & Augmented Reality Development
-                · Games Development`
-            } />
-          <Experience
-            company={"Centro de Estudios Superiores Fuencarral"}
-            position={"Grado Medio de Técnico en Sistemas Microinformáticos y Redes"}
-            starttime={"2018"}
-            endtime={"2020"}
-            summary={
-              `Linux · Django · Administración de sistemas · MySQL · VirtualBox · XAMPP · Microsoft Office · CSS · Linux Server · Reparación de equipos informáticos · Microsoft Exchange · JavaScript · Packet Tracer · Directorio activo · HTML`
-            } />
+          <Divider borderColor={dividerColor} />
+          {t.education.entries.map(entry => (
+            <Experience
+              key={`${entry.company}-${entry.position}`}
+              company={entry.company}
+              position={entry.position}
+              starttime={entry.starttime}
+              endtime={entry.endtime}
+              summary={entry.summary}
+            />
+          ))}
         </Section>
 
         <Section delay={0.4} id="proyectos">
@@ -245,19 +96,12 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
 
         <Section delay={0.5} id="habilidades">
           <Heading as="h2" variant="section-title">
-            Habilidades
+            {t.skills.title}
           </Heading>
-          <Divider
-            borderColor={useColorModeValue('#779ECB', '#f3a269')}
-          />
-          <Paragraph>
-            Como profesional, he desarrollado aplicaciones multiplataforma, creando soluciones que funcionan en diversas plataformas para adaptarse
-            a las demandas del mercado. Además, tengo experiencia en diseñar y construir sistemas BackEnd robustos para aplicaciones y servicios web.
-            También soy competente en la planificación y configuración de infraestructuras de servidor,
-            asegurando un rendimiento óptimo en todas las etapas de desarrollo.
-          </Paragraph>
+          <Divider borderColor={dividerColor} />
+          <Paragraph>{t.skills.paragraph}</Paragraph>
           <Heading as="h3" variant="skills" align="center">
-            Software y Lenguajes
+            {t.skills.subtitle}
           </Heading>
           <br />
           <Skills />
@@ -265,25 +109,20 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
 
         <Section delay={0.6} id="contacto">
           <Heading as="h2" variant="section-title">
-            Contacto
+            {t.contact.title}
           </Heading>
-          <Divider
-            borderColor={useColorModeValue('#779ECB', '#f3a269')}
-          />
-          <Paragraph>
-            ¿Tienes un proyecto de datos entre manos o una oportunidad en la que
-            encajo? Escríbeme y hablamos: respondo rápido.
-          </Paragraph>
+          <Divider borderColor={dividerColor} />
+          <Paragraph>{t.contact.text}</Paragraph>
           <Box textAlign="center" my={6}>
             <Button
               as="a"
               href="mailto:diego171200@gmail.com"
               leftIcon={<EmailIcon />}
-              bg={useColorModeValue('#5A82B8', '#f3a269')}
+              bg={accent}
               color={useColorModeValue('white', '#18181a')}
               _hover={{ opacity: 0.85, transform: 'translateY(-2px)' }}
               mr={4}>
-              Escríbeme
+              {t.contact.ctaMail}
             </Button>
             <Button
               as="a"
@@ -292,10 +131,10 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
               rel="noopener noreferrer"
               leftIcon={<ExternalLinkIcon />}
               variant="outline"
-              borderColor={useColorModeValue('#5A82B8', '#f3a269')}
-              color={useColorModeValue('#5A82B8', '#f3a269')}
+              borderColor={accent}
+              color={accent}
               _hover={{ bg: useColorModeValue('#5A82B815', '#f3a26915'), transform: 'translateY(-2px)' }}>
-              LinkedIn
+              {t.contact.ctaLinkedIn}
             </Button>
           </Box>
         </Section>

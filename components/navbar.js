@@ -1,8 +1,10 @@
 import Logo from "./logo";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import {
     Container,
     Box,
+    Button,
     Link,
     Stack,
     Flex,
@@ -17,19 +19,13 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from "./theme-toggle-button";
 import { chakra, shouldForwardProp } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useTranslation } from "../libs/i18n";
 
 const AnimateDiv = chakra(motion.div, {
     shouldForwardProp: prop => {
         return shouldForwardProp(prop) || prop === 'transition'
     }
 })
-
-const navItems = [
-    { href: '/#sobre-mi', label: 'Sobre mí' },
-    { href: '/#experiencia', label: 'Experiencia' },
-    { href: '/#proyectos', label: 'Proyectos' },
-    { href: '/#contacto', label: 'Contacto' }
-]
 
 const NavLink = ({ href, children }) => (
     <Link
@@ -46,7 +42,30 @@ const NavLink = ({ href, children }) => (
     </Link>
 )
 
+const LanguageSwitcher = () => {
+    const router = useRouter()
+    const { t, locale } = useTranslation()
+    const otherLocale = locale === 'es' ? 'en' : 'es'
+
+    return (
+        <Button
+            as={NextLink}
+            href={router.asPath}
+            locale={otherLocale}
+            size="sm"
+            variant="outline"
+            fontFamily="'Space Mono'"
+            title={t.nav.langSwitchTitle}
+            aria-label={t.nav.langSwitchTitle}
+        >
+            {otherLocale.toUpperCase()}
+        </Button>
+    )
+}
+
 const NavBar = props => {
+    const { t } = useTranslation()
+
     return (
         <Box
             position="fixed"
@@ -79,13 +98,14 @@ const NavBar = props => {
                         flexGrow={1}
                         justifyContent="flex-end"
                         mr={2}>
-                        {navItems.map(item => (
+                        {t.nav.items.map(item => (
                             <NavLink key={item.href} href={item.href}>
                                 {item.label}
                             </NavLink>
                         ))}
                     </Stack>
                     <Box display="flex" alignItems="center" gap={2}>
+                        <LanguageSwitcher />
                         <ThemeToggleButton />
                         <Box display={{ base: 'inline-block', md: 'none' }}>
                             <Menu isLazy>
@@ -93,10 +113,10 @@ const NavBar = props => {
                                     as={IconButton}
                                     icon={<HamburgerIcon />}
                                     variant="outline"
-                                    aria-label="Abrir menú de navegación"
+                                    aria-label={t.nav.menuAria}
                                 />
                                 <MenuList>
-                                    {navItems.map(item => (
+                                    {t.nav.items.map(item => (
                                         <MenuItem key={item.href} as={NextLink} href={item.href}>
                                             {item.label}
                                         </MenuItem>

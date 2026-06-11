@@ -11,12 +11,16 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, ProjectImage, Meta } from '../../components/project'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
+import { useTranslation } from '../../libs/i18n'
 
 const Work = () => {
+  const { t } = useTranslation()
+  const project = t.projectPages.passwordmanager
+
   return (
-    <Layout title="Administrador de Usuarios">
+    <Layout title={project.layoutTitle}>
         <Title>
-          Administrador de Usuarios
+          {project.title}
           <Badge
             bgColor={useColorModeValue('#779ECB', '#f3a269')}
             color={useColorModeValue('white', 'black')}
@@ -24,56 +28,42 @@ const Work = () => {
             mb={1}
           >
             {' '}
-            2020{' '}
+            {project.year}{' '}
           </Badge>
         </Title>
-        <P>
-          Aplicación de consola de comandos realizada con Java. Es un simple
-          gestor de usuarios en el que podremos Registrar, Modificar y Eliminar
-          usuarios, además de listar todos los usuarios, un usuario concreto o
-          todos los usuarios asociados a un tipo de cuenta.
-        </P>
+        <P>{project.intro}</P>
         <List my={4}>
           <ListItem>
-            <Meta>Código</Meta>
+            <Meta>{t.projectPage.code}</Meta>
             <Link
               href="https://github.com/diego-tech/Administrador-de-Usuarios"
               target="_blank"
-            rel="noopener noreferrer"
+              rel="noopener noreferrer"
             >
-              Código GitHub
+              {t.projectPage.githubCode}
               <ExternalLinkIcon mx="2px" mb="4px" />
             </Link>
           </ListItem>
           <ListItem>
-            <Meta>Plataforma</Meta>
-            <span>Windows/MacOs/Linux</span>
+            <Meta>{t.projectPage.platform}</Meta>
+            <span>{project.platform}</span>
           </ListItem>
           <ListItem>
-            <Meta>Stack</Meta>
-            <span>Java</span>
+            <Meta>{t.projectPage.stack}</Meta>
+            <span>{project.stack}</span>
           </ListItem>
         </List>
         <Heading as="h2" variant="section-title">
-          Multimedia
+          {t.projectPage.multimedia}
         </Heading>
         <Divider borderColor={useColorModeValue('#779ECB', '#f3a269')} my={6} />
-        <ProjectImage
-          src="/images/projects/passwordmanager/1.png"
-          alt="User Manager"
-        />
-        <ProjectImage
-          src="/images/projects/passwordmanager/2.png"
-          alt="User Manager"
-        />
-        <ProjectImage
-          src="/images/projects/passwordmanager/3.png"
-          alt="User Manager"
-        />
-        <ProjectImage
-          src="/images/projects/passwordmanager/4.png"
-          alt="User Manager"
-        />
+        {[1, 2, 3, 4].map(n => (
+          <ProjectImage
+            key={n}
+            src={`/images/projects/passwordmanager/${n}.png`}
+            alt={`${project.title} - ${n}`}
+          />
+        ))}
     </Layout>
   )
 }
