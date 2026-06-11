@@ -1,10 +1,10 @@
 import NextLink from 'next/link'
 import Image from 'next/image'
-import { Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react'
+import { Box, Text, LinkBox, LinkOverlay, useColorModeValue } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 
 export const GridItem = ({ children, href, title, thumbnail }) => (
-    <Box w="100%" align="center">
+    <Box w="100%" textAlign="center">
         <LinkBox cursor="pointer">
             <Image
                 src={thumbnail}
@@ -12,7 +12,7 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
                 className="grid-item-thumbnail"
                 placeholder="blur"
                 loading="lazy" />
-            <LinkOverlay href={href} target="_blank">
+            <LinkOverlay href={href} target="_blank" rel="noopener noreferrer">
                 <Text mt={2}>
                     {title}
                 </Text>
@@ -25,52 +25,56 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
 )
 
 export const ProjectGridItem = ({ children, id, title, thumbnail }) => (
-    <Box 
-        w="100%"
+    <LinkBox
+        as="article"
+        h="100%"
         display="flex"
         flexDirection="column"
-        alignItems="center"
-        justifyContent="center" 
-        textAlign="center"
+        borderWidth="1px"
+        borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.300')}
+        borderRadius="xl"
+        overflow="hidden"
+        bg={useColorModeValue('white', 'whiteAlpha.50')}
+        transition="all 0.3s ease"
         _hover={{
+            transform: 'translateY(-4px)',
+            boxShadow: 'lg',
+            borderColor: useColorModeValue('#5A82B8', '#f3a269'),
             '.grid-item-thumbnail': {
-                transform: 'scale(1.1)', // Escala la imagen al 110%
-                transition: 'transform 0.3s ease-in-out', // Transición suave
+                transform: 'scale(1.05)'
             }
         }}>
-        <NextLink href={`/projects/${id}`} passHref>
-            <LinkBox cursor="pointer">
-                <Image
-                    src={thumbnail}
-                    alt={title}
-                    className="grid-item-thumbnail"
-                    placeholder="blur"
-                />
-                <Text
-                    textDecoration="underline"
-                    textUnderlineOffset={5}
-                    mt={3}
-                    mb={3}
-                    fontSize={20}
-                >
+        <Box overflow="hidden">
+            <Image
+                src={thumbnail}
+                alt={title}
+                className="grid-item-thumbnail"
+                placeholder="blur"
+            />
+        </Box>
+        <Box p={4} textAlign="center" flexGrow={1}>
+            <LinkOverlay as={NextLink} href={`/projects/${id}`}>
+                <Text fontSize={18} fontWeight="bold">
                     {title}
                 </Text>
-                <Text
-                    fontSize={14}
-                    overflowWrap={'break-word'}
-                    whiteSpace={"normal"}>
-                    {children}
-                </Text>
-            </LinkBox>
-        </NextLink>
-    </Box>
+            </LinkOverlay>
+            <Text
+                fontSize={14}
+                mt={2}
+                overflowWrap={'break-word'}
+                whiteSpace={"normal"}>
+                {children}
+            </Text>
+        </Box>
+    </LinkBox>
 );
 
 export const GridItemsStyle = () => (
     <Global styles={`
         .grid-item-thumbnail {
-            border-radius: 12px;
-            transition: all 300ms;
+            width: 100%;
+            height: auto;
+            transition: transform 300ms ease;
         }
     `} />
 )

@@ -4,6 +4,10 @@ import { useColorModeValue } from "@chakra-ui/react"
 const GlobalStyles = () => (
     <Global
         styles={`
+            html {
+                scroll-behavior: smooth;
+            }
+
             /* Quitar el anillo de foco solo en interacción con ratón,
                manteniéndolo visible para navegación por teclado (WCAG 2.4.7) */
             *:focus:not(:focus-visible) {
@@ -48,6 +52,13 @@ const GlobalStyles = () => (
 
             .expItem {
                 margin-top: 1.5em;
+                padding-left: 16px;
+                border-left: 2px solid ${useColorModeValue('#5A82B855', '#f3a26955')};
+                transition: border-color 0.3s ease;
+            }
+
+            .expItem:hover {
+                border-left-color: ${useColorModeValue('#5A82B8', '#f3a269')};
             }
 
             .expItem h3 {
@@ -102,9 +113,15 @@ const GlobalStyles = () => (
                 font-size: 0.65rem;
                 display: flex;
                 gap: 4px;
-                margin-top: 8px;
+                margin-top: 16px;
                 justify-content: center;
                 align-items: center;
+            }
+
+            @media (min-width: 48em) {
+                .rssFooter {
+                    justify-content: flex-start;
+                }
             }
 
             .rssLink {
@@ -112,7 +129,7 @@ const GlobalStyles = () => (
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                border: 1px solid #eee;
+                border: 1px solid ${useColorModeValue('#e4e4e7', '#3f3f46')};
                 padding: 4px;
                 height: 32px;
                 width: 32px;
@@ -121,8 +138,9 @@ const GlobalStyles = () => (
             }
 
             .rssLink:hover {
-                background: #eee;
-                border: 1px solid #ddd;
+                background: ${useColorModeValue('#eee', '#27272a')};
+                border-color: ${useColorModeValue('#5A82B8', '#f3a269')};
+                transform: translateY(-2px);
             }
 
             .rssSvg {
@@ -138,15 +156,21 @@ const GlobalStyles = () => (
 
             .skillsLi {
                 align-items: center;
-                background: #eee;
+                background: ${useColorModeValue('#ffffff', '#ffffff0a')};
                 border-radius: 6px;
-                color: black;
+                color: ${useColorModeValue('#18181a', '#f9fafb')};
                 display: flex;
                 font-weight: 500;
                 gap: 10px;
                 padding: 0.2rem 0.6rem;
                 height: 40px;
-                border: 1px solid #1b232c;
+                border: 1px solid ${useColorModeValue('#d4d4d8', '#3f3f46')};
+                transition: all 0.2s ease;
+            }
+
+            .skillsLi:hover {
+                border-color: ${useColorModeValue('#5A82B8', '#f3a269')};
+                transform: translateY(-2px);
             }
         `}
     />

@@ -1,10 +1,12 @@
 import {
   Link,
   Box,
+  Button,
   Heading,
   Divider,
   useColorModeValue,
 } from '@chakra-ui/react'
+import { EmailIcon, ExternalLinkIcon } from '@chakra-ui/icons'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
@@ -18,7 +20,7 @@ const IndexPage = () => {
   return (
     <Box>
       <Layout>
-        <Section delay={0.1}>
+        <Section delay={0.1} id="sobre-mi">
           <Heading as="h2" variant="section-title">
             Sobre Mí
           </Heading>
@@ -82,7 +84,7 @@ const IndexPage = () => {
           </BioSection>
         </Section>
 
-        <Section delay={0.2}>
+        <Section delay={0.2} id="experiencia">
           <Heading as="h2" variant="section-title">
             Experiencia Laboral
           </Heading>
@@ -153,7 +155,7 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
             } />
         </Section>
 
-        <Section delay={0.3}>
+        <Section delay={0.3} id="educacion">
           <Heading as="h2" variant="section-title">
             Educación
           </Heading>
@@ -237,11 +239,11 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
             } />
         </Section>
 
-        <Section delay={0.4}>
+        <Section delay={0.4} id="proyectos">
           <Projects />
         </Section>
 
-        <Section delay={0.5}>
+        <Section delay={0.5} id="habilidades">
           <Heading as="h2" variant="section-title">
             Habilidades
           </Heading>
@@ -259,6 +261,43 @@ y optimizo los procesos de auditoría y análisis de datos aplicando técnicas a
           </Heading>
           <br />
           <Skills />
+        </Section>
+
+        <Section delay={0.6} id="contacto">
+          <Heading as="h2" variant="section-title">
+            Contacto
+          </Heading>
+          <Divider
+            borderColor={useColorModeValue('#779ECB', '#f3a269')}
+          />
+          <Paragraph>
+            ¿Tienes un proyecto de datos entre manos o una oportunidad en la que
+            encajo? Escríbeme y hablamos: respondo rápido.
+          </Paragraph>
+          <Box textAlign="center" my={6}>
+            <Button
+              as="a"
+              href="mailto:diego171200@gmail.com"
+              leftIcon={<EmailIcon />}
+              bg={useColorModeValue('#5A82B8', '#f3a269')}
+              color={useColorModeValue('white', '#18181a')}
+              _hover={{ opacity: 0.85, transform: 'translateY(-2px)' }}
+              mr={4}>
+              Escríbeme
+            </Button>
+            <Button
+              as="a"
+              href="https://www.linkedin.com/in/diego-mu%C3%B1oz-herranz-b03a42182/"
+              target="_blank"
+              rel="noopener noreferrer"
+              leftIcon={<ExternalLinkIcon />}
+              variant="outline"
+              borderColor={useColorModeValue('#5A82B8', '#f3a269')}
+              color={useColorModeValue('#5A82B8', '#f3a269')}
+              _hover={{ bg: useColorModeValue('#5A82B815', '#f3a26915'), transform: 'translateY(-2px)' }}>
+              LinkedIn
+            </Button>
+          </Box>
         </Section>
       </Layout>
     </Box>

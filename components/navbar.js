@@ -1,11 +1,19 @@
 import Logo from "./logo";
+import NextLink from "next/link";
 import {
     Container,
     Box,
+    Link,
     Stack,
     Flex,
+    Menu,
+    MenuItem,
+    MenuList,
+    MenuButton,
+    IconButton,
     useColorModeValue
 } from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from "./theme-toggle-button";
 import { chakra, shouldForwardProp } from "@chakra-ui/react";
 import { motion } from "framer-motion";
@@ -16,6 +24,28 @@ const AnimateDiv = chakra(motion.div, {
     }
 })
 
+const navItems = [
+    { href: '/#sobre-mi', label: 'Sobre mí' },
+    { href: '/#experiencia', label: 'Experiencia' },
+    { href: '/#proyectos', label: 'Proyectos' },
+    { href: '/#contacto', label: 'Contacto' }
+]
+
+const NavLink = ({ href, children }) => (
+    <Link
+        as={NextLink}
+        href={href}
+        p={2}
+        color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+        _hover={{
+            textDecoration: 'none',
+            color: useColorModeValue('#5A82B8', '#f3a269')
+        }}
+    >
+        {children}
+    </Link>
+)
+
 const NavBar = props => {
     return (
         <Box
@@ -24,7 +54,7 @@ const NavBar = props => {
             w="100%"
             bg={useColorModeValue('#ffffff44', '#20202380')}
             css={{ backdropFilter: 'blur(10px)' }}
-            zIndex={1}
+            zIndex={2}
             {...props}
         >
             <AnimateDiv
@@ -36,21 +66,44 @@ const NavBar = props => {
                     p={2}
                     maxW="container.md"
                     wrap="wrap"
-                    align="center"
-                    justify="space-between"
-                    verticalAlign="center">
+                    alignItems="center"
+                    justifyContent="space-between">
                     <Flex align="center" mr={5}>
                         <Logo />
                     </Flex>
                     <Stack
-                        direction={{ base: 'column', md: 'row' }}
+                        direction="row"
                         display={{ base: 'none', md: 'flex' }}
-                        width={{ base: 'full', md: 'auto' }}
                         alignItems="center"
-                        flexGrow={1}>
+                        fontSize="sm"
+                        flexGrow={1}
+                        justifyContent="flex-end"
+                        mr={2}>
+                        {navItems.map(item => (
+                            <NavLink key={item.href} href={item.href}>
+                                {item.label}
+                            </NavLink>
+                        ))}
                     </Stack>
-                    <Box flex={1} align="right">
+                    <Box display="flex" alignItems="center" gap={2}>
                         <ThemeToggleButton />
+                        <Box display={{ base: 'inline-block', md: 'none' }}>
+                            <Menu isLazy>
+                                <MenuButton
+                                    as={IconButton}
+                                    icon={<HamburgerIcon />}
+                                    variant="outline"
+                                    aria-label="Abrir menú de navegación"
+                                />
+                                <MenuList>
+                                    {navItems.map(item => (
+                                        <MenuItem key={item.href} as={NextLink} href={item.href}>
+                                            {item.label}
+                                        </MenuItem>
+                                    ))}
+                                </MenuList>
+                            </Menu>
+                        </Box>
                     </Box>
                 </Container>
             </AnimateDiv>

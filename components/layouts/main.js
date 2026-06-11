@@ -1,10 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import NavBar from '../navbar';
-import { Box, Container, Heading, Image, useColorModeValue } from '@chakra-ui/react';
+import {
+    Box,
+    Button,
+    Container,
+    Heading,
+    Image,
+    Stack,
+    Text,
+    useColorModeValue
+} from '@chakra-ui/react';
+import { EmailIcon, DownloadIcon } from '@chakra-ui/icons';
 import Footer from '../footer';
 import Section from '../section';
-import { ChevronLeftIcon } from '@chakra-ui/icons';
 
 const SITE_URL = 'https://www.dmunoz.dev';
 const SITE_DESCRIPTION =
@@ -42,17 +51,8 @@ const personJsonLd = {
 };
 
 const Main = ({ children, router }) => {
-    const [showSpan, setShowSpan] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowSpan(false);
-        }, 10000);
-
-        return () => clearTimeout(timer);
-    }, []);
-
     const canonicalUrl = `${SITE_URL}${router.asPath === '/' ? '' : router.asPath}`.split('?')[0];
+    const accent = useColorModeValue('#5A82B8', '#f3a269');
 
     return (
         <Box as="main" pb={8}>
@@ -91,43 +91,62 @@ const Main = ({ children, router }) => {
                         <Box
                             flexShrink={0}
                             mt={{ base: 4, md: 0 }}
-                            ml={{ md: 6 }}
-                            align="center">
+                            mr={{ md: 8 }}
+                            textAlign="center">
 
                             <Image
-                                borderWidth={2}
+                                borderWidth={3}
                                 borderStyle="solid"
-                                maxWidth="140px"
+                                boxSize="140px"
+                                objectFit="cover"
                                 display="inline-block"
-                                borderRadius="30"
-                                borderColor={useColorModeValue('#18181a', '#f9fafb')}
+                                borderRadius="full"
+                                borderColor={accent}
                                 src="/images/diego.webp"
                                 alt="Fotografía de Diego Muñoz Herranz" />
                         </Box>
-                        <Box flexGrow={1} align="center" ml={6}>
-                            <Heading as='h1' variant='page-title' pb={2}>
+                        <Box flexGrow={1} mt={{ base: 4, md: 0 }} textAlign={{ base: 'center', md: 'left' }}>
+                            <Heading as='h1' variant='page-title' pb={1}>
                                 Diego Muñoz Herranz
                             </Heading>
-                            <p>Data Engineer en Dentsu España <br /> (Desarrollador y Analista de Datos)</p>
-                            <span style={{ display: 'inline-flex', alignItems: 'center', marginTop: '6px' }}>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="12"
-                                    height="12"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    style={{ marginRight: '10px' }}
-                                >
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                                    <path d="M2 12h20"></path>
-                                </svg>
-                                Madrid, España
-                            </span>
+                            <Text fontWeight="bold" color={accent}>
+                                Data Engineer · Madrid, España
+                            </Text>
+                            <Text fontSize="sm" mt={2} maxW="md" mx={{ base: 'auto', md: 0 }}>
+                                Construyo pipelines de datos y soluciones de IA que convierten
+                                grandes volúmenes de información en decisiones de negocio.
+                                Actualmente en Dentsu, antes en KPMG y Deloitte.
+                            </Text>
+                            <Stack
+                                direction={{ base: 'column', sm: 'row' }}
+                                spacing={3}
+                                mt={4}
+                                justify={{ base: 'center', md: 'flex-start' }}
+                                align="center">
+                                <Button
+                                    as="a"
+                                    href="mailto:diego171200@gmail.com"
+                                    leftIcon={<EmailIcon />}
+                                    bg={accent}
+                                    color={useColorModeValue('white', '#18181a')}
+                                    _hover={{ opacity: 0.85, transform: 'translateY(-2px)' }}
+                                    size="sm">
+                                    Hablemos
+                                </Button>
+                                <Button
+                                    as="a"
+                                    href="/files/CV_Diego_Munoz_Herranz.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    leftIcon={<DownloadIcon />}
+                                    variant="outline"
+                                    borderColor={accent}
+                                    color={accent}
+                                    _hover={{ bg: useColorModeValue('#5A82B815', '#f3a26915'), transform: 'translateY(-2px)' }}
+                                    size="sm">
+                                    Descargar CV
+                                </Button>
+                            </Stack>
 
                             <footer className='rssFooter'>
                                 <a
@@ -209,9 +228,6 @@ const Main = ({ children, router }) => {
                                         <line x1="12" y1="15" x2="12" y2="3"></line>
                                     </svg>
                                 </a>
-                                {showSpan && (
-                                    <span className="fadeOut"> <ChevronLeftIcon /> Descargar CV Aquí</span>
-                                )}
                             </footer>
                         </Box>
                     </Box>
@@ -219,29 +235,6 @@ const Main = ({ children, router }) => {
                 {children}
                 <Footer />
             </Container>
-            <style jsx>{`
-                .fadeOut {
-                    position: fixed;
-                    bottom: -5px;
-                    right: 30px;
-                    border-radius: 5px;
-                    padding: 10px;
-                    animation: fadeOut 10s forwards;
-                    z-index: 1000;
-                    display: flex;
-                    align-items: center;
-                    font-size: 14px;
-                }
-
-                @keyframes fadeOut {
-                    0% {
-                        opacity: 1;
-                    }
-                    100% {
-                        opacity: 0;
-                    }
-                }
-            `}</style>
         </Box>
     );
 }
