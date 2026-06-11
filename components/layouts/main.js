@@ -15,6 +15,7 @@ import { EmailIcon, DownloadIcon } from '@chakra-ui/icons';
 import Footer from '../footer';
 import Section from '../section';
 import ScrollToTopButton from '../scroll-to-top-button';
+import AnimatedBackground from '../animated-background';
 import { useTranslation } from '../../libs/i18n';
 
 const SITE_URL = 'https://www.dmunoz.dev';
@@ -87,6 +88,7 @@ const Main = ({ children, router }) => {
                 />
             </Head>
 
+            <AnimatedBackground />
             <NavBar path={router.asPath} />
             <Container maxW="container.md" pt={14}>
                 <Section delay={0.1}>
