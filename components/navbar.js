@@ -61,15 +61,14 @@ const LanguageSwitcher = () => {
         }
     }, [router.events])
 
+    const otherLocale = locale === 'es' ? 'en' : 'es'
+    const flagLabel = otherLocale === 'en' ? '🇬🇧 EN' : '🇪🇸 ES'
+
     const handleSwitch = () => {
         if (isNavigating) return
-        const otherLocale = locale === 'es' ? 'en' : 'es'
-        // strip hash/query to avoid scroll-to-anchor on locale change
         const currentPath = router.asPath.split('#')[0].split('?')[0]
         router.push(currentPath, currentPath, { locale: otherLocale, scroll: false })
     }
-
-    const otherLocale = locale === 'es' ? 'en' : 'es'
 
     return (
         <Button
@@ -81,7 +80,7 @@ const LanguageSwitcher = () => {
             title={t.nav.langSwitchTitle}
             aria-label={t.nav.langSwitchTitle}
         >
-            {otherLocale.toUpperCase()}
+            {flagLabel}
         </Button>
     )
 }
