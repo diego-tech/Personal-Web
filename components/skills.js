@@ -19,7 +19,7 @@ export const Skills = () => (
 
         <li className="skillsLi">ACL Analytics</li>
         <li className="skillsLi">Azure Databricks</li>
-        <li className="skillsLi">Altery Designer</li>
+        <li className="skillsLi">Alteryx Designer</li>
         <li className="skillsLi">PySpark</li>
         <li className="skillsLi">PyTorch</li>
 

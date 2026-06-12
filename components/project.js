@@ -1,29 +1,34 @@
 import NextLink from 'next/link'
-import { 
-    Heading, 
-    Box, 
-    Image, 
-    Link, 
+import {
+    Heading,
+    Box,
+    Image,
+    Link,
     Badge,
     Text
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import { useTranslation } from '../libs/i18n'
 
-export const Title = ({ children }) => (
+export const Title = ({ children }) => {
+    const { t } = useTranslation()
+
+    return (
     <Box>
-        <NextLink href="/">
-            <Link>Proyectos</Link>
-        </NextLink>
+        <Link as={NextLink} href="/#proyectos">
+            {t.projectPage.breadcrumb}
+        </Link>
         <span>
             &nbsp;
             <ChevronRightIcon />
             &nbsp;
         </span>
-        <Heading fontFamily="Space Mono" display='inline-block' as="h3" fontSize={20} mb={4}>
+        <Heading fontFamily="Space Mono" display='inline-block' as="h2" fontSize={20} mb={4}>
             {children}
         </Heading>
     </Box>
-)
+    )
+}
 
 export const ProjectImage = ({ src, alt }) => (
     <Image borderRadius="lg" w="full" src={src} alt={alt} mb={4} />

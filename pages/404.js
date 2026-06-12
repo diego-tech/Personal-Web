@@ -8,12 +8,15 @@ import {
   Button,
   useColorModeValue,
 } from '@chakra-ui/react'
+import { useTranslation } from '../libs/i18n'
 
 const NotFound = () => {
+  const { t } = useTranslation()
+
   return (
     <Container mt={10}>
-      <Heading as="h1">Page Not Found</Heading>
-      <Text>La página que busca no se ha encontrado.</Text>
+      <Heading as="h1">{t.notFound.title}</Heading>
+      <Text>{t.notFound.text}</Text>
       <Divider borderColor={useColorModeValue('#779ECB', '#f3a269')} my={6} />
       <Box my={6} align="center">
         <NextLink href="/">
@@ -21,7 +24,7 @@ const NotFound = () => {
             color={useColorModeValue('#18181a', '#f9fafb')}
             bgColor={useColorModeValue('#779ECB', '#f3a269')}
           >
-            Volver a Inicio
+            {t.notFound.button}
           </Button>
         </NextLink>
       </Box>

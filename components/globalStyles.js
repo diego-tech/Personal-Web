@@ -4,14 +4,20 @@ import { useColorModeValue } from "@chakra-ui/react"
 const GlobalStyles = () => (
     <Global
         styles={`
-            *,*:focus,*:hover{
-                outline:none;
+            html {
+                scroll-behavior: smooth;
+            }
+
+            /* Quitar el anillo de foco solo en interacción con ratón,
+               manteniéndolo visible para navegación por teclado (WCAG 2.4.7) */
+            *:focus:not(:focus-visible) {
+                outline: none;
                 box-shadow: none;
             }
 
-            /* Remove Focus */
-            *:focus {
-                box-shadow: none !important;
+            *:focus-visible {
+                outline: 2px solid ${useColorModeValue('#779ECB', '#f3a269')};
+                outline-offset: 2px;
             }
 
             /* Scroll Bar Style */
@@ -44,58 +50,61 @@ const GlobalStyles = () => (
                 line-height: 30px;
             }
 
-            .expList {
-                margin-top: 1em;
-                display: flex;
-                flex-direction: column;
-                gap: 32px;
-                list-style: none;
+            .expItem {
+                margin-top: 1.5em;
+                padding-left: 16px;
+                border-left: 2px solid ${useColorModeValue('#5A82B855', '#f3a26955')};
+                transition: border-color 0.3s ease;
             }
 
-            .expList article h3 {
+            .expItem:hover {
+                border-left-color: ${useColorModeValue('#5A82B8', '#f3a269')};
+            }
+
+            .expItem h3 {
                 font-weight: 500;
                 color: ${useColorModeValue('#18181a', '#f9fafb')};
                 text-decoration: underline;
                 text-underline-offset: 5px;
             }
 
-            .expList article a {
+            .expItem a {
                 color: ${useColorModeValue('#18181a', '#f9fafb')};
             }
 
-            .expList article a:hover {
+            .expItem a:hover {
                 text-decoration: underline;
             }
 
-            .expList article h3, h4 {
+            .expItem h3, .expItem h4 {
                 margin-top: 0px;
                 margin-bottom: 0px;
             }
 
-            .expList article h4 {
+            .expItem h4 {
                 color: ${useColorModeValue('#18181a', '#f9fafb')};
                 font-weight: lighter;
             }
 
-            .expList header {
+            .expItem header {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
                 margin-bottom: 4px;
             }
 
-            .expList time {
+            .expItem time {
                 color: ${useColorModeValue('#555', '#f9fafb')};
                 font-size: 0.85rem;
                 min-width: 102px;
                 cursor: default;
             }
 
-            .expList footer {
+            .expItem footer {
                 color: ${useColorModeValue('#555', '#f9fafb')};
             }
 
-            .expList footer p {
+            .expItem footer p {
                 font-size: smaller;
             }
 
@@ -104,9 +113,15 @@ const GlobalStyles = () => (
                 font-size: 0.65rem;
                 display: flex;
                 gap: 4px;
-                margin-top: 8px;
+                margin-top: 16px;
                 justify-content: center;
                 align-items: center;
+            }
+
+            @media (min-width: 48em) {
+                .rssFooter {
+                    justify-content: flex-start;
+                }
             }
 
             .rssLink {
@@ -114,7 +129,7 @@ const GlobalStyles = () => (
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                border: 1px solid #eee;
+                border: 1px solid ${useColorModeValue('#e4e4e7', '#3f3f46')};
                 padding: 4px;
                 height: 32px;
                 width: 32px;
@@ -123,8 +138,9 @@ const GlobalStyles = () => (
             }
 
             .rssLink:hover {
-                background: #eee;
-                border: 1px solid #ddd;
+                background: ${useColorModeValue('#eee', '#27272a')};
+                border-color: ${useColorModeValue('#5A82B8', '#f3a269')};
+                transform: translateY(-2px);
             }
 
             .rssSvg {
@@ -140,15 +156,21 @@ const GlobalStyles = () => (
 
             .skillsLi {
                 align-items: center;
-                background: #eee;
+                background: ${useColorModeValue('#ffffff', '#ffffff0a')};
                 border-radius: 6px;
-                color: black;
+                color: ${useColorModeValue('#18181a', '#f9fafb')};
                 display: flex;
                 font-weight: 500;
                 gap: 10px;
                 padding: 0.2rem 0.6rem;
                 height: 40px;
-                border: 1px solid #1b232c;
+                border: 1px solid ${useColorModeValue('#d4d4d8', '#3f3f46')};
+                transition: all 0.2s ease;
+            }
+
+            .skillsLi:hover {
+                border-color: ${useColorModeValue('#5A82B8', '#f3a269')};
+                transform: translateY(-2px);
             }
         `}
     />

@@ -5,10 +5,14 @@ import theme from '../libs/theme'
 export default class Document extends NextDocument {
     render () {
         return(
-            <Html lang="en">
+            <Html lang={this.props.__NEXT_DATA__.locale || 'es'}>
                 <Head>
-                    {/* Añade la etiqueta canonical aquí */}
-                    <link rel="canonical" href="https://www.dmunoz.dev/" />
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+                        rel="stylesheet"
+                    />
                 </Head>
                 <body>
                     <ColorModeScript initialColorMode={theme.config.initialColorMode}/>
