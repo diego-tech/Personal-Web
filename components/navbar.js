@@ -1,6 +1,7 @@
 import Logo from "./logo";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 import {
     Container,
     Box,
@@ -45,17 +46,35 @@ const NavLink = ({ href, children }) => (
 const LanguageSwitcher = () => {
     const router = useRouter()
     const { t, locale } = useTranslation()
+    const [isNavigating, setIsNavigating] = useState(false)
+
+    useEffect(() => {
+        const onStart = () => setIsNavigating(true)
+        const onEnd = () => setIsNavigating(false)
+        router.events.on('routeChangeStart', onStart)
+        router.events.on('routeChangeComplete', onEnd)
+        router.events.on('routeChangeError', onEnd)
+        return () => {
+            router.events.off('routeChangeStart', onStart)
+            router.events.off('routeChangeComplete', onEnd)
+            router.events.off('routeChangeError', onEnd)
+        }
+    }, [router.events])
+
+    const handleSwitch = () => {
+        if (isNavigating) return
+        const otherLocale = locale === 'es' ? 'en' : 'es'
+        // strip hash/query to avoid scroll-to-anchor on locale change
+        const currentPath = router.asPath.split('#')[0].split('?')[0]
+        router.push(currentPath, currentPath, { locale: otherLocale, scroll: false })
+    }
+
     const otherLocale = locale === 'es' ? 'en' : 'es'
-    // Sin hash ni query: si no, el cambio de idioma navega al ancla
-    // de la última sección visitada y la página salta hasta ella.
-    const currentPath = router.asPath.split('#')[0].split('?')[0]
 
     return (
         <Button
-            as={NextLink}
-            href={currentPath}
-            locale={otherLocale}
-            scroll={false}
+            onClick={handleSwitch}
+            isDisabled={isNavigating}
             size="sm"
             variant="outline"
             fontFamily="'Space Mono'"
